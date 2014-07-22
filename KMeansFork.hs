@@ -15,9 +15,9 @@ import System.Random
 type Point a = (V.Vector Double, a)
 
 -- | Type representing a cluster (group) of vectors by its center and an id
-data Cluster = Cluster {
+data Cluster a= Cluster {
   cid :: !Int,
-  center :: !(V.Vector Double)
+  center :: !Point a
   } -- deriving (Show,Eq)
 
 type Distance a= Point a -> Point a -> Double
