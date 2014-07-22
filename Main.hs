@@ -27,15 +27,22 @@ main = do
     print $ B.zip (B.fromList[0..(length (head y))])  (B.fromList $ head y)
     let numberString = (!!3) file
     g <- getStdGen
-    let work = transformList $  pickIndicesOfList y $ map stringtoNumber $ S.split "," numberString
+    let bin = findBin (head y)
+
     let x = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
     let gr = delNode 0 $ buildGraph x empty
-    let xs = nodes gr
-    --let out = zip (map snd work) (calculateAllDistances ((length xs)-1) gr xs)
-    --let output = generateDotOutput $ zip [1..] $ K.kmeans k K.euclidD K.iterativeSplit $  shuffle' out (length out) g
+    let listOfNodes = nodes gr
+    let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
+    let work = map (addToTuple bin) $ transformList $  pickIndicesOfList y $ map stringtoNumber $ S.split "," numberString
+    let test = addDistanceToTuple work distances
+    print test
+    --print work
+    --print distances
+    --print out
+    --let output = generateDotOutput $ zip [1..] $ K.kmeans k K.euclidD K.iterativeSplit work
     --writeOutput outh output
     --hClose outh
-    print $ work
+    --print $ work
 
 
 
@@ -181,4 +188,11 @@ decToBin' y = let (a,b) = quotRem y 2 in [b] ++ decToBin' a
 differenceBetweenBitVector xs ys = length $ filter id $ zipWith (/=) xs ys
 
 
+addToTuple :: [c] -> (a,b) -> (a,(b,[c]))  --b may also be a Tuple
+addToTuple ys (a,b) = (a,(b,ys))
+
+
+addDistanceToTuple :: [(V.Vector Double, (Int, [Int]))] -> [V.Vector Int] -> [(V.Vector Double, (Int, [Int], V.Vector Int))]
+addDistanceToTuple [] [] = []
+addDistanceToTuple ((v,(i,l)):xs) (d:distance) = [(v,(i,l,d))] ++ addDistanceToTuple xs distance
 

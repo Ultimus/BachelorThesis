@@ -20,14 +20,14 @@ data Cluster = Cluster {
   center :: !(V.Vector Double)
   } -- deriving (Show,Eq)
 
-type Distance = V.Vector Double -> V.Vector Double -> Double
+type Distance a= Point a -> Point a -> Double
 
 
 {-#INLINE euclidD#-}
-euclidD :: V.Vector Double -> V.Vector Double -> Double
-euclidD u v = V.sum $ V.zipWith (\a b -> (a - b)^2) u v
+euclidD :: Point a -> Point a -> Double
+euclidD u v = V.sum $ V.zipWith (\a b -> (a - b)^2) (fst u) (fst v)
 
-
+{-
 {-#INLINE l1Dist#-}
 l1Dist :: Distance
 l1Dist v1 v2 = V.sum $ V.zipWith diffabs v1 v2
@@ -38,7 +38,7 @@ lInfDist :: Distance
 lInfDist v1 v2 = V.maximum $ V.zipWith diffabs v1 v2
     where diffabs a b = abs ( a - b)
 
-
+-}
 {-#INLINE iterativeSplit#-}
 iterativeSplit :: Int -> [a] -> [[a]]
 iterativeSplit k vs = go vs
@@ -59,15 +59,15 @@ computeClusters = zipWith Cluster [0..] . map f
                    in V.map (\x -> x / (fromIntegral n)) v
 
 {-#INLINE regroupPoints#-}
-regroupPoints :: forall a. [Cluster] -> Distance -> [Point a] -> [[Point a]]
+regroupPoints :: forall a. [Cluster] -> Distance a-> [Point a] -> [[Point a]]
 regroupPoints clusters distance points = L.filter (not.null) . G.toList . G.accum (flip (:)) (G.replicate (length clusters) []) . map closest $ points
  where
    closest p = (cid (L.minimumBy (compare `on` (distance (fst p) . center)) clusters),p)
 
-kmeansStep :: [Point a] -> Distance -> [[Point a]] -> [[Point a]]
+kmeansStep :: [Point a] -> Distance a-> [[Point a]] -> [[Point a]]
 kmeansStep points distance pgroups = regroupPoints (computeClusters . map (map fst) $ pgroups) distance points
 
-kmeansAux :: [Point a] -> Distance -> [[Point a]] -> [[Point a]]
+kmeansAux :: [Point a] -> Distance a-> [[Point a]] -> [[Point a]]
 kmeansAux points distance pgroups = let pss = kmeansStep points distance pgroups in
   case map (map fst) pss == map (map fst) pgroups of
   True -> pgroups
@@ -75,6 +75,6 @@ kmeansAux points distance pgroups = let pss = kmeansStep points distance pgroups
 
 -- | Performs the k-means clustering algorithm
 -- using trying to use 'k' clusters on the given list of points
-kmeans :: Int -> Distance -> (Int -> [Point a] -> [[Point a]]) -> [Point a] -> [[Point a]]
+kmeans :: Int -> Distance a-> (Int -> [Point a] -> [[Point a]]) -> [Point a] -> [[Point a]]
 kmeans k distance partition points = kmeansAux points distance pgroups
   where pgroups = partition k points
