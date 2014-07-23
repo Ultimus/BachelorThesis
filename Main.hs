@@ -36,10 +36,10 @@ main = do
     let shfl = read ((!! 6)file ) ::Int
     let shuffled = shuffle' work (length work) g
     let concrete = if shfl == 1 then shuffled else work
-    let output1 = outputFileType $ zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
-    writeOutput outh output1
+    let output = zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
+    writeOutput outh (outputFileType output)
     hClose outh
-    print $ work
+    print output
 
     --let test = addDistanceToTuple work distances
 {-let x = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
