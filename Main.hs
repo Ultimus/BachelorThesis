@@ -7,7 +7,6 @@ import System.Random
 import System.Random.Shuffle
 import PrologLexer(lexString)
 import Token
-import Math.KMeans
 import KMeansFork as K
 import qualified Data.IntSet as I
 import qualified Data.Vector.Unboxed as V

@@ -10,12 +10,12 @@ license-file:        LICENSE
 author:              Maximilian Arendt
 maintainer:          maximilian.arendt@hhu.de
 -- copyright:           
-category:            experimental
+-- category:            
 build-type:          Simple
 cabal-version:       >=1.8
 
 executable Ba
-  -- main-is:             
-  -- other-modules:       
-  build-depends:       base ==4.6.*, vector ==0.10.*, array ==0.5.*, parsec ==3.1.*, MissingH ==1.2.*, random ==1.0.*, kmeans-vector ==0.2.*, containers ==0.5.*
+  main-is: Main.hs           
+  other-modules: KMeansFork, PrologLexer, Token, Graph     
+  build-depends:       base ==4.6.*, vector ==0.10.*, random ==1.0.*, array >=0.4, parsec ==3.1.*, fgl ==5.5.*, MissingH ==1.2.*, random-shuffle ==0.0.*, containers ==0.5.*
   build-tools:         alex, happy
