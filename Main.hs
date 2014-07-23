@@ -26,24 +26,27 @@ main = do
     let y = map init $ map escapeUnusedVariables $ map followedBy$ (drop 2) $ splitSep $ lexString $ unlines $ deleteUnusedTerms $ lines contents -- gives just index 1- end
     print $ B.zip (B.fromList[0..(length (head y))])  (B.fromList $ head y)
     let numberString = (!!3) file
+    let c = read ((!! 4 ) file):: Int
+    let distanceFunction = chooseDistanceFunction c
+    let s = read ((!! 5) file) ::Int
+    let splitFunction = chooseSplit s
     g <- getStdGen
     let bin = findBin (head y)
+    let work = {-map (addToTuple bin) $-} transformList $  pickIndicesOfList y $ map stringtoNumber $ S.split "," numberString
+    let outputFileType = chooseOutput ((!! 1) file)
+    let shfl = read ((!! 6)file ) ::Int
+    let shuffled = shuffle' work (length work) g
+    let concrete = if shfl == 1 then shuffled else work
+    let output1 = outputFileType $ zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
+    writeOutput outh output1
+    hClose outh
+    print $ work
 
-    let x = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
+    --let test = addDistanceToTuple work distances
+{-let x = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
     let gr = delNode 0 $ buildGraph x empty
     let listOfNodes = nodes gr
-    let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
-    let work = map (addToTuple bin) $ transformList $  pickIndicesOfList y $ map stringtoNumber $ S.split "," numberString
-    let test = addDistanceToTuple work distances
-    print test
-    --print work
-    --print distances
-    --print out
-    --let output = generateDotOutput $ zip [1..] $ K.kmeans k K.euclidD K.iterativeSplit work
-    --writeOutput outh output
-    --hClose outh
-    --print $ work
-
+    let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes-}
 
 
 writeOutput outh outputString= do
@@ -137,11 +140,14 @@ stringtoNumber x = read x :: Int
 ioToString :: String -> [Char]
 ioToString x = read x :: [Char]
 
+chooseOutput:: (Eq a1, Num a1, Show a1, Show b) => [Char] -> [(a1, [(a, b)])] -> [Char]
+chooseOutput name = if isPrefixOf "lp." (reverse name) then generatePrologOutput else generateDotOutput
 
+generateDotOutput :: (Eq a1, Num a1, Show a1, Show b) => [(a1, [(a, b)])] -> [Char]
 generateDotOutput [] = ""
 generateDotOutput (h:input) = "subgraph \"cluster_" ++ (show $ fst h) ++ "\" {node [style=filled, color = white]; label = \"CLUSTER"++(show $fst h)++ "\"; style = filled;color=" ++ (switchColor h)++"; "++ (replace "[" "" $ replace "]" "" $ replace "," ";" $ show $ extractIds $ snd h) ++ "}\n" ++ generateDotOutput input
 
-generatePrologOutput :: (Show a1, Show b) => [(a1, [(a, b)])] -> [Char]
+generatePrologOutput :: (Eq a1, Num a1, Show a1, Show b) => [(a1, [(a, b)])] -> [Char]
 generatePrologOutput [] = ""
 generatePrologOutput (h:input) = "cluster(" ++ (show $ fst h) ++ ", " ++ (show $ extractIds $ snd $ h) ++").\n"++ generatePrologOutput input
 
@@ -196,3 +202,10 @@ addDistanceToTuple :: [(V.Vector Double, (Int, [Int]))] -> [V.Vector Int] -> [(V
 addDistanceToTuple [] [] = []
 addDistanceToTuple ((v,(i,l)):xs) (d:distance) = [(v,(i,l,d))] ++ addDistanceToTuple xs distance
 
+chooseDistanceFunction :: Int -> Distance
+chooseDistanceFunction x | x == 0 = K.euclidD
+                         | x == 1 = K.l1Dist
+                         | x == 2 = K.lInfDist
+
+chooseSplit x | x == 0 = K.iterativeSplit
+              | x == 1 = K.oneBigList
