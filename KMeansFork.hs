@@ -37,10 +37,12 @@ type Distance = V.Vector Double -> V.Vector Double -> Double
 euclidD :: Distance
 euclidD u v = V.sum $ V.zipWith (\a b -> (a - b)^2) u v
 
-{-
+
 euclidD' :: Distance'
 euclidD' u v = if (snd u == [] && snd v == []) then euclidD (fst u) (fst v)
-    else euclidD (fst u) (fst v) + b where b = sum $ bitDifference (snd u) (snd v)-}
+    else a + (fromIntegral b)
+        where a = euclidD (fst u) (fst v)
+              b = sum $ bitDifference (snd u) (snd v)
 
 {-#INLINE l1Dist#-}
 l1Dist :: Distance
@@ -94,7 +96,8 @@ kmeans k distance partition points = kmeansAux points distance pgroups
   where pgroups = partition k points
 
 
+bitDifference :: [[Int]]-> [[Int]] -> [Int]
+bitDifference u v = zipWith differenceBetweenBitVector u v
 
-bitDifference  u v = zipWith differenceBetweenBitVector u v
-
+differenceBetweenBitVector:: [Int] -> [Int] -> Int
 differenceBetweenBitVector xs ys = length $ filter id $ zipWith (/=) xs ys
