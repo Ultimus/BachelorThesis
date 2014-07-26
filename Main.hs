@@ -190,7 +190,7 @@ decToBin x = reverse $ decToBin' x where
 decToBin' 0 = []
 decToBin' y = let (a,b) = quotRem y 2 in [b] ++ decToBin' a
 
-differenceBetweenBitVector xs ys = length $ filter id $ zipWith (/=) xs ys
+
 
 
 addToTuple :: [c] -> (a,b) -> (a,(b,[c]))  --b may also be a Tuple
