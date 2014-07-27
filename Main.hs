@@ -39,13 +39,19 @@ main = do
     let output = zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
     writeOutput outh (outputFileType output)
     hClose outh
-    print output
-
-    --let test = addDistanceToTuple work distances
-{-let x = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
+    --Graph stuff
+    let x = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
     let gr = delNode 0 $ buildGraph x empty
     let listOfNodes = nodes gr
-    let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes-}
+    let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
+    let indices = map extractIds $ map snd output
+   -- print  $ (V.! 23) $ (!!23) distances
+    print $ averageDistanceByCluster indices distances
+
+    -- $ averageDistanceByCluster indices distances
+
+    --let test = addDistanceToTuple work distances
+
 
 
 writeOutput outh outputString= do
@@ -208,3 +214,29 @@ chooseDistanceFunction x | x == 0 = K.euclidD
 
 chooseSplit x | x == 0 = K.iterativeSplit
               | x == 1 = K.oneBigList
+
+
+getAllIdsByCluster :: [(Int, [(V.Vector Double, Int)])]-> [[Int]]
+getAllIdsByCluster [] = []
+getAllIdsByCluster (x:xs) = [extractIds $ snd x] ++ getAllIdsByCluster xs
+
+
+averageDistanceByCluster :: [[Int]] -> [V.Vector Int] -> [Double]
+averageDistanceByCluster [] _ = [0]
+averageDistanceByCluster (i:indices) vectors = [averageDistanceAmongCluster i vectors] ++ averageDistanceByCluster indices vectors
+
+averageDistanceAmongCluster :: [Int] -> [V.Vector Int] -> Double
+averageDistanceAmongCluster [] _ = 0
+averageDistanceAmongCluster (i:indices) vector = (s / l) + averageDistanceAmongCluster indices vector
+                                                 where distances = distanceToAllOtherNodes i indices vector
+                                                       l = fromIntegral $ length distances
+                                                       s = fromIntegral $ sum distances
+
+distanceToAllOtherNodes::Int -> [Int] -> [V.Vector Int] -> [Int]
+distanceToAllOtherNodes _ [] _ = [0]
+distanceToAllOtherNodes x (i:indices) vector =  [(V.! i) $ (!! x) vector] ++ distanceToAllOtherNodes x indices vector
+
+
+doubleSum:: [Double] -> Double
+doubleSum [] = 0
+doubleSum (x:xs) = x + doubleSum xs
