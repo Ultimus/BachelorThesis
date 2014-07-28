@@ -46,10 +46,8 @@ main = do
     let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
     let indices = map extractIds $ map snd output
    -- print  $ (V.! 23) $ (!!23) distances
-    --print $ averageDistanceByCluster indices distances
-    print $ averageDistanceAmongCluster  (head $ init indices) distances
-    print $ (!! 22) distances
-    print $ (head $ tail indices)
+    print $ init $ averageDistanceByCluster indices distances
+
 
     --let test = addDistanceToTuple work distances
 
@@ -224,7 +222,7 @@ getAllIdsByCluster (x:xs) = [extractIds $ snd x] ++ getAllIdsByCluster xs
 
 averageDistanceByCluster :: [[Int]] -> [V.Vector Int] -> [Double]
 averageDistanceByCluster [] _ = [0]
-averageDistanceByCluster (i:indices) vectors = [averageDistanceAmongCluster i vectors] ++ averageDistanceByCluster indices vectors
+averageDistanceByCluster (i:indices) vectors = [(averageDistanceAmongCluster i vectors) / (fromIntegral $ length i)] ++ averageDistanceByCluster indices vectors
 
 averageDistanceAmongCluster :: [Int] -> [V.Vector Int] -> Double
 averageDistanceAmongCluster [] _ = 0
@@ -235,7 +233,7 @@ averageDistanceAmongCluster (i:indices) vector = (s / l) + averageDistanceAmongC
 
 distanceToAllOtherNodes::Int -> [Int] -> [V.Vector Int] -> [Int]
 distanceToAllOtherNodes _ [] _ = [0]
-distanceToAllOtherNodes x (i:indices) vector =  [(V.! (i-1)) $ (!! x) vector] ++ distanceToAllOtherNodes x indices vector
+distanceToAllOtherNodes x (i:indices) vector =  [(V.! (i-1)) $ (!! (x-1)) vector] ++ distanceToAllOtherNodes x indices vector
 
 
 doubleSum:: [Double] -> Double
