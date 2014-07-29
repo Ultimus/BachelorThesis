@@ -45,8 +45,9 @@ main = do
     let listOfNodes = nodes gr
     let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
     let indices = map extractIds $ map snd output
-   -- print  $ (V.! 23) $ (!!23) distances
-    print $ init $ averageDistanceByCluster indices distances
+
+    print "done"
+    -- $ init $ averageDistanceByCluster indices distances
 
 
     --let test = addDistanceToTuple work distances
@@ -109,7 +110,7 @@ constructListOfLists (x:xs) = [x]:constructListOfLists xs
 
 tokenToDouble :: Token -> Double
 tokenToDouble (Int i) = fromIntegral i
-tokenToDouble (Bin i) = fromIntegral i
+tokenToDouble (Bin i) = fromIntegral $ kardinality $ decToBin i
 tokenToDouble (B False) = 0.0
 tokenToDouble (B True) = 1.0
 tokenToDouble (FDInt s) = read i :: Double where
@@ -239,3 +240,7 @@ distanceToAllOtherNodes x (i:indices) vector =  [(V.! (i-1)) $ (!! (x-1)) vector
 doubleSum:: [Double] -> Double
 doubleSum [] = 0
 doubleSum (x:xs) = x + doubleSum xs
+
+
+kardinality :: [Int] -> Int
+kardinality = length . filter (==1)
