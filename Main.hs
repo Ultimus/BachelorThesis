@@ -46,7 +46,7 @@ main = do
     let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
     let indices = map extractIds $ map snd output
 
-    print "done"
+    print output
     -- $ init $ averageDistanceByCluster indices distances
 
 
@@ -156,6 +156,14 @@ generatePrologOutput :: (Eq a1, Num a1, Show a1, Show b) => [(a1, [(a, b)])] -> 
 generatePrologOutput [] = ""
 generatePrologOutput (h:input) = "cluster(" ++ (show $ fst h) ++ ", " ++ (show $ extractIds $ snd $ h) ++").\n"++ generatePrologOutput input
 
+generateCompressedDotOutput [] = ""
+generateCompressedDotOutput xs = "digraph visited_states {\ngraph [nodesep=1.5, ranksep=1.5];\n" ++ dotEdges xs ++ "\n}"
+
+-- 1 -> 0 [color = "#006391", label="leave1", fontsize=12];
+
+dotEdges [] = []
+dotEdges ((a,b,t):xs) = (show a) ++ " -> " ++ (show b) ++ "[color = \"#006391\", label=\"" ++ (show t) ++"\", fontsize=12];" ++ dotEdges xs
+
 switchColor :: (Eq a, Num a) => (a, b) -> [Char]
 switchColor h
     | fst h == 1 = "lightgrey"
@@ -237,10 +245,26 @@ distanceToAllOtherNodes _ [] _ = [0]
 distanceToAllOtherNodes x (i:indices) vector =  [(V.! (i-1)) $ (!! (x-1)) vector] ++ distanceToAllOtherNodes x indices vector
 
 
-doubleSum:: [Double] -> Double
-doubleSum [] = 0
-doubleSum (x:xs) = x + doubleSum xs
-
-
 kardinality :: [Int] -> Int
 kardinality = length . filter (==1)
+
+
+findMaximumLength:: [[Token]]-> Int -> Int
+findMaximumLength xs index =  length $ decToBin $ maximum $ map tokenToInt $ map (!! index) xs
+
+fillingUpWithZero :: [Int] -> Int -> [Int]
+fillingUpWithZero xs 0 = xs
+fillingUpWithZero xs i = if (i - (length xs)) == 0 then xs else fillingUpWithZero ([0]++ xs) i
+
+
+setToBitVector :: [Int] ->[Int] -> [Int]  --second List is replicate (maximum) 0
+setToBitVector [] ys = ys
+setToBitVector (x:xs) ys = setToBitVector xs ((fst list) ++ [1] ++ (tail $ snd list))
+                           where list = splitAt (x) ys
+
+
+
+
+
+
+

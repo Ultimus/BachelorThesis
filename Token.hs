@@ -19,4 +19,3 @@ instance Num Token where
     (Int i) - (Int j)  = Int (i -j)
     (Int i) * (Int j) = Int (i * j)
     --fromIntegral i =Int i
-

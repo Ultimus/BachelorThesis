@@ -3,23 +3,27 @@ module Graph where
 
 import PrologLexer(lexString)
 import Data.List
+import Data.List.Utils
 import System.Environment
 import Token
 import Data.Graph.Inductive
 import Data.Graph.Inductive.Example
 import Data.Graph.Inductive.PatriciaTree
+import qualified Data.HashMap as H
 
 
-{-main = do
+{-}
+main = do
     file <- getArgs
     contents <- readFile $ head file
     let y = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
     let gr = delNode 0 $ buildGraph y empty
     let xs = nodes gr
-    print $ calculateAllDistances ((length xs) -1) gr xs
+    print xs
+    --print $ calculateAllDistances ((length xs) -1) gr xs
 -}
 
-buildGraph :: [[Token]] -> Gr () () -> Gr () ()
+buildGraph :: [[Token]] -> Gr () String -> Gr () String
 buildGraph xs gr = insEdges (getAllEdges xs) $ insNodes (getAllNodes xs) gr
 
 
@@ -28,13 +32,20 @@ buildGraph xs gr = insEdges (getAllEdges xs) $ insNodes (getAllNodes xs) gr
 removeDuplicates :: (Ord a) => [a] -> [a]
 removeDuplicates = map head . group . sort
 
-getAllEdges xs = map toupleToEdge $ map toTouple $ map (map tokenToInt) xs
+getAllEdges' ::[[Token]] -> [(Node, Node,())]
+getAllEdges' xs = map toupleToEdge $ map toTouple $ map (map tokenToInt) xs
     where toTouple xxs = (head xxs, last xxs)
           toupleToEdge :: (Int,Int) -> (Node ,Node ,())
           toupleToEdge (x,y) = (x,y,())
 
+getAllEdges :: [[Token]] -> [(Node, Node, String)]
+getAllEdges xs = map toTripleN xs
 
+toTriple :: [Token] -> (Int,Int,String)
+toTriple xxs = (tokenToInt $ head xxs, tokenToInt $ last xxs, (tokenToString $ head $ tail xxs))
 
+toTripleN :: [Token] -> (Node,Node,String)
+toTripleN xxs = (tokenToInt $ head xxs, tokenToInt $ last xxs, (tokenToString $ head $ tail xxs))
 
 getAllNodes :: [[Token]] -> [LNode ()]
 getAllNodes xs = map intToNode $ map tokenToInt $ map head xs ++ map last xs
@@ -86,3 +97,23 @@ tokenToInt:: Token -> Int
 tokenToInt (Int i) = i
 tokentoInt _ = error "tokenToInt used on non Int"
 
+tokenToString :: Token -> String
+tokenToString (Atom i) = i
+tokenTostring _ = error "tokenToString used on non Atom"
+
+
+replaceEdges :: [(Int, Int, String)] -> [(Int,[Int])] -> [(Int,Int, String)]
+replaceEdges xs ys = replaceEdge xs (H.fromList $ setUpHashMap ys)
+
+replaceEdge (a,b,t) hmap = (a',b',t) where
+                           a' = lookup a hmap
+                           b' = lookup b hmap
+
+
+setUpHashMap [] = []
+setUpHashMap (x:xs) = zip list (replicate (length list) (fst x) ) ++ setUpHashMap xs where list = (snd x)
+
+
+
+vars:: [Integer]
+vars = [1,2,3,4,5]

@@ -78,7 +78,7 @@ computeClusters = zipWith Cluster [0..] . map f
 regroupPoints :: forall a. [Cluster] -> Distance -> [Point a] -> [[Point a]]
 regroupPoints clusters distance points = L.filter (not.null) . G.toList . G.accum (flip (:)) (G.replicate (length clusters) []) . map closest $ points
  where
-   closest p = (cid (L.minimumBy (compare `on` (distance (fst p) . center)) clusters),p)
+   closest p = (cid (L.minimumBy (compare `on` (distance (fst p) . center)) clusters)center in the cluster data ,p)
 
 kmeansStep :: [Point a] -> Distance -> [[Point a]] -> [[Point a]]
 kmeansStep points distance pgroups = regroupPoints (computeClusters . map (map fst) $ pgroups) distance points
