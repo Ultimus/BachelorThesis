@@ -4,6 +4,7 @@ module Graph where
 import PrologLexer(lexString)
 import Data.List
 import Data.List.Utils
+import Data.Maybe
 import System.Environment
 import Token
 import Data.Graph.Inductive
@@ -26,11 +27,6 @@ main = do
 buildGraph :: [[Token]] -> Gr () String -> Gr () String
 buildGraph xs gr = insEdges (getAllEdges xs) $ insNodes (getAllNodes xs) gr
 
-
-
--- code by http://stackoverflow.com/questions/16108714/haskell-removing-duplicates-from-a-list
-removeDuplicates :: (Ord a) => [a] -> [a]
-removeDuplicates = map head . group . sort
 
 getAllEdges' ::[[Token]] -> [(Node, Node,())]
 getAllEdges' xs = map toupleToEdge $ map toTouple $ map (map tokenToInt) xs
@@ -95,19 +91,27 @@ splitSep xs
 
 tokenToInt:: Token -> Int
 tokenToInt (Int i) = i
+tokenTiInt (Atom i) = 0
 tokentoInt _ = error "tokenToInt used on non Int"
 
 tokenToString :: Token -> String
 tokenToString (Atom i) = i
-tokenTostring _ = error "tokenToString used on non Atom"
+tokenToString (S i) = i
+tokenToString _ = []
 
 
 replaceEdges :: [(Int, Int, String)] -> [(Int,[Int])] -> [(Int,Int, String)]
-replaceEdges xs ys = replaceEdge xs (H.fromList $ setUpHashMap ys)
+replaceEdges xs ys = map (replaceEdge (H.fromList $ setUpHashMap ys)) xs
 
-replaceEdge (a,b,t) hmap = (a',b',t) where
-                           a' = lookup a hmap
-                           b' = lookup b hmap
+replaceEdge :: H.Map Int Int -> (Int, Int, String) -> (Int, Int, String)
+replaceEdge hmap (a,b,t) = (a',b',t) where
+                           a' = zeroAsDefault $ H.lookup a hmap
+                           b' = zeroAsDefault $ H.lookup b hmap
+
+zeroAsDefault :: Maybe Int -> Int
+zeroAsDefault mx = case mx of
+    Nothing -> 0
+    Just x -> x
 
 
 setUpHashMap [] = []

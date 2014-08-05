@@ -32,21 +32,24 @@ main = do
     g <- getStdGen
     let bin = findBin (head y)
     let work = {-map (addToTuple bin) $-} transformList $  pickIndicesOfList y $ map stringtoNumber $ S.split "," numberString
-    let outputFileType = chooseOutput ((!! 1) file)
+    --let outputFileType = chooseOutput ((!! 1) file)
     let shfl = read ((!! 6)file ) ::Int
     let shuffled = shuffle' work (length work) g
     let concrete = if shfl == 1 then shuffled else work
     let output = zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
-    writeOutput outh (outputFileType output)
-    hClose outh
+    let indices = zip [1.. k] $ map extractIds $ map snd output
+    print $ head work
+   -- print $ splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
     --Graph stuff
-    let x = splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
-    let gr = delNode 0 $ buildGraph x empty
-    let listOfNodes = nodes gr
-    let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
-    let indices = map extractIds $ map snd output
 
-    print output
+    let x = nubBy matchTuple $ compressLabels $ nub $ replaceEdges (map toTriple $ drop 2 $ splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents) indices
+    --let gr = delNode 0 $ buildGraph x empty
+    --let listOfNodes = nodes gr
+    --let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
+    writeOutput outh (generateCompressedDotOutput x)
+    hClose outh
+    print x
+    print "helloe"
     -- $ init $ averageDistanceByCluster indices distances
 
 
@@ -162,7 +165,26 @@ generateCompressedDotOutput xs = "digraph visited_states {\ngraph [nodesep=1.5, 
 -- 1 -> 0 [color = "#006391", label="leave1", fontsize=12];
 
 dotEdges [] = []
-dotEdges ((a,b,t):xs) = (show a) ++ " -> " ++ (show b) ++ "[color = \"#006391\", label=\"" ++ (show t) ++"\", fontsize=12];" ++ dotEdges xs
+dotEdges ((a,b,t):xs) = (show a) ++ " -> " ++ (show b) ++ " [color = \"#006391\", label=" ++ (show t) ++", fontsize=12];\n\n" ++ dotEdges xs
+
+compressLabels :: [(Int, Int, String)]-> [(Int, Int, String)]
+compressLabels [] = []
+compressLabels ((a,b,t):xs) = [(a,b,t')] ++ compressLabels xs where t' = similarEdges (a,b,t) xs
+
+similarEdges (a,b,t) [] = t
+similarEdges (a,b,t) ((a', b' ,t'):xs) = if a == a' && b == b' then similarEdges (a,b, (t++" "++t')) xs else similarEdges (a,b,t) xs
+
+
+{-}
+deleteSimilarEdges' [] = []
+deleteSimilarEdges' (x:xs) = deleteSimilarEdges x xs ++deleteSimilarEdges' xs
+
+deleteSimilarEdges :: (Int, Int , String) -> [(Int, Int, String)] -> [(Int, Int, String)]
+deleteSimilarEdges (a,b,t) [] = [(a,b,t)]
+deleteSimilarEdges (a,b,t) ((a',b',t'):xs) = if a == a' && b == b' then deleteSimilarEdges (a,b,t) xs else [(a',b',t')] ++deleteSimilarEdges (a,b,t) xs
+-}
+
+matchTuple (a,b,t) (a',b',t') = if (a== 0 || b == 0 || a' == 0 || b' == 0) then True else a == a' && b == b'
 
 switchColor :: (Eq a, Num a) => (a, b) -> [Char]
 switchColor h
@@ -261,7 +283,6 @@ setToBitVector :: [Int] ->[Int] -> [Int]  --second List is replicate (maximum) 0
 setToBitVector [] ys = ys
 setToBitVector (x:xs) ys = setToBitVector xs ((fst list) ++ [1] ++ (tail $ snd list))
                            where list = splitAt (x) ys
-
 
 
 
