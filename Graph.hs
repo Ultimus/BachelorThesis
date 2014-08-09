@@ -91,7 +91,10 @@ splitSep xs
 
 tokenToInt:: Token -> Int
 tokenToInt (Int i) = i
-tokenTiInt (Atom i) = 0
+tokenToInt (Atom i) = 0
+tokenToInt (Bin i) = i
+tokenToInt (N i) = i
+tokenToInt (S i) = 0
 tokentoInt _ = error "tokenToInt used on non Int"
 
 tokenToString :: Token -> String
@@ -116,8 +119,3 @@ zeroAsDefault mx = case mx of
 
 setUpHashMap [] = []
 setUpHashMap (x:xs) = zip list (replicate (length list) (fst x) ) ++ setUpHashMap xs where list = (snd x)
-
-
-
-vars:: [Integer]
-vars = [1,2,3,4,5]

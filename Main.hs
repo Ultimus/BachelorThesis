@@ -15,41 +15,51 @@ import Graph
 import Data.Graph.Inductive
 import Data.Graph.Inductive.Example
 import Data.Graph.Inductive.PatriciaTree
+import Variables
 
 
 main = do
     file  <- getArgs
     contents <- readFile $ head file
     outh <- openFile ((!! 1) file) WriteMode
-    let k = stringtoNumber $ (!! 2) file
-    let y = map init $ map escapeUnusedVariables $ map followedBy$ (drop 2) $ splitSep $ lexString $ unlines $ deleteUnusedTerms $ lines contents -- gives just index 1- end
-    print $ B.zip (B.fromList[0..(length (head y))])  (B.fromList $ head y)
+    let k = read ((!! 2) file) :: Int
+    let y = init vars -- escape empty list at the end --  map init $ map escapeUnusedVariables $ map followedBy$ (drop 2) $ splitSep $ lexString $ unlines $ deleteUnusedTerms $ lines contents -- gives just index 1- end
+    --print $ B.zip (B.fromList[0..(length (head y))])  (B.fromList $ head y)
+    print $ init $ head vars
     let numberString = (!!3) file
     let c = read ((!! 4 ) file):: Int
     let distanceFunction = chooseDistanceFunction c
     let s = read ((!! 5) file) ::Int
     let splitFunction = chooseSplit s
     g <- getStdGen
-    let bin = findBin (head y)
-    let work = {-map (addToTuple bin) $-} transformList $  pickIndicesOfList y $ map stringtoNumber $ S.split "," numberString
+    --let bin = findBin (head y)
+    let work = {-map (addToTuple bin) $-} transformList (pickIndicesOfList y $ map stringtoNumber $ S.split "," numberString) (tokenToInt $ last $ head vars)
     --let outputFileType = chooseOutput ((!! 1) file)
     let shfl = read ((!! 6)file ) ::Int
     let shuffled = shuffle' work (length work) g
     let concrete = if shfl == 1 then shuffled else work
     let output = zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
     let indices = zip [1.. k] $ map extractIds $ map snd output
-    print $ head work
-   -- print $ splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents
+    print $ any (==True) $ map containsBin vars
+    let longest =  maximum $ map (countBin 0) y
+    print $ length $ decToBin $ tokenToInt $ maximum $ map maximum (init vars)
+    print work
+    print $ map (transformVariable longest) (head $ tail vars)
+    print "stop"
+    --print $ (!!30) vars
+    --print $ map (transformVariable 4) ((!!30) vars)
+    print $ map concat $ map (map (transformVariable 4)) (init vars)
+    print "hello"
     --Graph stuff
 
-    let x = nubBy matchTuple $ compressLabels $ nub $ replaceEdges (map toTriple $ drop 2 $ splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents) indices
+    let x = nubBy matchTuple $ compressLabels $ nub $ replaceEdges (map toTriple $ drop 1 $ splitSep $ lexString $ unlines $ escapeButRoot $ escapeButTransition $ lines contents) indices
     --let gr = delNode 0 $ buildGraph x empty
     --let listOfNodes = nodes gr
     --let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
     writeOutput outh (generateCompressedDotOutput x)
     hClose outh
-    print x
-    print "helloe"
+    print $ findMaximumLength (init vars) 1
+    print "hello"
     -- $ init $ averageDistanceByCluster indices distances
 
 
@@ -113,9 +123,11 @@ constructListOfLists (x:xs) = [x]:constructListOfLists xs
 
 tokenToDouble :: Token -> Double
 tokenToDouble (Int i) = fromIntegral i
-tokenToDouble (Bin i) = fromIntegral $ kardinality $ decToBin i
+tokenToDouble (Bin i) = fromIntegral i -- fromIntegral $ kardinality $ decToBin i
+tokenToDouble (N i)= fromIntegral i
 tokenToDouble (B False) = 0.0
 tokenToDouble (B True) = 1.0
+tokenToDouble (S i) = 0.0
 tokenToDouble (FDInt s) = read i :: Double where
     i = escapeFd s
 tokenToDouble _ = error "tokenToDouble used on non-Int"
@@ -130,11 +142,20 @@ escapeFd (x:xs)
 
 
 
-indexElements :: [V.Vector Double] -> [(V.Vector Double,Int)]
-indexElements xs = zip xs [1..]
+indexElements :: [V.Vector Double] -> Int -> [(V.Vector Double,Int)]
+indexElements xs first = zip xs [first..]
 
 
 transformList = indexElements . fmap V.fromList . (map (map tokenToDouble))
+
+transformVariable _ (N i) = [tokenToDouble (N i)]
+transformVariable _ (B True) = [tokenToDouble (B True)]
+transformVariable _ (B False) = [tokenToDouble ( B False)]
+transformVariable _ (Int i) = [tokenToDouble (Int i)]
+transformVariable longest (Bin i) =  map fromIntegral $ fillingUpWithZero (decToBin i) longest
+transformVariable longest (S i) = map fromIntegral $ replicate longest 0
+
+
 
 
 
@@ -229,6 +250,7 @@ decToBin' y = let (a,b) = quotRem y 2 in [b] ++ decToBin' a
 
 
 
+
 addToTuple :: [c] -> (a,b) -> (a,(b,[c]))  --b may also be a Tuple
 addToTuple ys (a,b) = (a,(b,ys))
 
@@ -284,7 +306,15 @@ setToBitVector [] ys = ys
 setToBitVector (x:xs) ys = setToBitVector xs ((fst list) ++ [1] ++ (tail $ snd list))
                            where list = splitAt (x) ys
 
+containsBin:: [Token] -> Bool
+containsBin [] = False
+containsBin (Bin i : xs) = Bin i == Bin i
+containsBin (_:xs) = containsBin xs
 
+countBin :: Int -> [Token] -> Int
+countBin x [] = x
+countBin x (Bin i :xs) = countBin (x+1) xs
+countBin x (_:xs) = countBin x xs
 
 
 

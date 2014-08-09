@@ -1,40 +1,52 @@
 digraph visited_states {
 graph [nodesep=1.5, ranksep=1.5];
-1 -> 1 [color = "#006391", label=" start precurrentquery hasreadquery finished currentquery", fontsize=12];
+1 -> 1 [color = "#006391", label=" reset anzeige fehler close", fontsize=12];
 
-1 -> 2 [color = "#006391", label="finished start", fontsize=12];
+1 -> 2 [color = "#006391", label=" fehler", fontsize=12];
 
-2 -> 2 [color = "#006391", label="start precurrentquery hasreadquery finished currentquery", fontsize=12];
+1 -> 4 [color = "#006391", label=" fehler", fontsize=12];
 
-1 -> 3 [color = "#006391", label="start finished", fontsize=12];
+2 -> 2 [color = "#006391", label=" anzeige laufe fehler stop reset", fontsize=12];
 
-2 -> 3 [color = "#006391", label="finished", fontsize=12];
+2 -> 1 [color = "#006391", label="open reset", fontsize=12];
 
-3 -> 3 [color = "#006391", label="start precurrentquery hasreadquery currentquery finished", fontsize=12];
+2 -> 3 [color = "#006391", label="fehler ", fontsize=12];
 
-3 -> 2 [color = "#006391", label="finished", fontsize=12];
+4 -> 1 [color = "#006391", label="reset  close stop", fontsize=12];
 
-2 -> 4 [color = "#006391", label="start finished", fontsize=12];
+4 -> 4 [color = "#006391", label="anzeige fehler close", fontsize=12];
 
-3 -> 4 [color = "#006391", label="finished start", fontsize=12];
+1 -> 3 [color = "#006391", label=" start", fontsize=12];
 
-4 -> 4 [color = "#006391", label="start precurrentquery hasreadquery currentquery finished", fontsize=12];
+3 -> 4 [color = "#006391", label=" fehler", fontsize=12];
 
-4 -> 3 [color = "#006391", label="finished", fontsize=12];
+3 -> 2 [color = "#006391", label=" reset start", fontsize=12];
 
-4 -> 2 [color = "#006391", label="finished", fontsize=12];
+3 -> 1 [color = "#006391", label="laufe reset", fontsize=12];
 
-3 -> 5 [color = "#006391", label="start finished", fontsize=12];
+3 -> 3 [color = "#006391", label="anzeige", fontsize=12];
 
-4 -> 5 [color = "#006391", label="start finished", fontsize=12];
+2 -> 5 [color = "#006391", label="fehler open", fontsize=12];
 
-5 -> 3 [color = "#006391", label="finished", fontsize=12];
+2 -> 4 [color = "#006391", label=" open", fontsize=12];
 
-5 -> 5 [color = "#006391", label="finished precurrentquery currentquery hasreadquery start", fontsize=12];
+4 -> 2 [color = "#006391", label="", fontsize=12];
 
-5 -> 2 [color = "#006391", label="finished", fontsize=12];
+4 -> 3 [color = "#006391", label="fehler ", fontsize=12];
 
-5 -> 4 [color = "#006391", label="finished", fontsize=12];
+4 -> 5 [color = "#006391", label=" fehler", fontsize=12];
+
+1 -> 5 [color = "#006391", label=" fehler", fontsize=12];
+
+5 -> 4 [color = "#006391", label="reset ", fontsize=12];
+
+5 -> 1 [color = "#006391", label="reset close", fontsize=12];
+
+5 -> 5 [color = "#006391", label="anzeige ", fontsize=12];
+
+3 -> 5 [color = "#006391", label="open", fontsize=12];
+
+5 -> 2 [color = "#006391", label="reset", fontsize=12];
 
 
 }

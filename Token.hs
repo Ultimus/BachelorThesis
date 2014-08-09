@@ -6,11 +6,13 @@ data Token =
 	S String    |
     Atom String |
 	Int Int     |
-	Bin Int     |
+	N Int       |
+	Bv [Int]    |
     B Bool      |
     Sep Char    |
-    FDInt String
-	deriving (Eq,Show)
+    FDInt String|
+    Bin Int
+	deriving (Eq,Show,Ord)
 
 
 
