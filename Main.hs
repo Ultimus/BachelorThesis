@@ -1,6 +1,7 @@
 import Data.List
 import Data.String.Utils as S
 import Data.Char
+import Data.Maybe
 import System.Environment
 import System.IO
 import System.Random
@@ -16,6 +17,7 @@ import Data.Graph.Inductive
 import Data.Graph.Inductive.Example
 import Data.Graph.Inductive.PatriciaTree
 import Variables
+import qualified Data.HashMap as H
 
 
 main = do
@@ -49,13 +51,18 @@ main = do
     writeOutput outh (generateCompressedDotOutput x)
     hClose outh
    -- print $ findMaximumLength (init vars) 1
-    print x
+    let aa = (thrd $ (!!1) x) ++ " new"
+    print $ (!!1)x
+    print $ words aa
+    print $ (map nub $ map snd $ H.toList $H.map nub $ H.map words (nodeLabel x H.empty))
+    print $ dotNodes x
+    -- print x
     -- $ init $ averageDistanceByCluster indices distances
 
 
     --let test = addDistanceToTuple work distances
 
-
+thrd (a,b,c) = c
 
 writeOutput outh outputString= do
     hPutStrLn outh outputString
@@ -171,9 +178,35 @@ generatePrologOutput [] = ""
 generatePrologOutput (h:input) = "cluster(" ++ (show $ fst h) ++ ", " ++ (show $ extractIds $ snd $ h) ++").\n"++ generatePrologOutput input
 
 generateCompressedDotOutput [] = ""
-generateCompressedDotOutput xs = "digraph visited_states {\ngraph [nodesep=1.5, ranksep=1.5];\n" ++ dotEdges xs ++ "\n}"
+generateCompressedDotOutput xs = "digraph visited_states {\ngraph [nodesep=1.5, ranksep=1.5];\n" ++ dotNodes xs ++"\n\n" ++ dotEdges xs ++ "\n}"
 
 -- 1 -> 0 [color = "#006391", label="leave1", fontsize=12];
+
+dotNodes :: [(Int,Int, String)] -> String
+dotNodes xs = dotNodes' (zip (map nub $ map snd $ H.toList $H.map nub $ H.map words (nodeLabel xs H.empty)) [1..])
+
+
+dotNodes' :: [([String], Int)] -> String
+dotNodes' [] = []
+dotNodes' ((text, identifier):xs) = (show identifier) ++ " [shape = record, color = \"blue\", fontsize = 12, label = \"|{" ++ (mapShow text) ++"}|\"];\n" ++ dotNodes' xs
+
+-- " [shape=record, color="blue", fontsize=12, label="|{new, swap\n|# states: 9}|"];
+
+nodeLabel :: [(Int, Int, String)] -> H.Map Int String -> H.Map Int String
+nodeLabel [] hmap= hmap
+nodeLabel ((a,b,t):xs) hmap | H.member a hmap = nodeLabel xs hmap'
+                            | otherwise  = nodeLabel xs (H.insert a t hmap)
+                            where hmap' = H.insert a (t++" "++t') hmap
+                                  t' = fromJust $ H.lookup a hmap
+
+
+mapShow [] = []
+mapShow (x:xs) =  x ++" "++ mapShow xs
+
+
+
+
+
 
 dotEdges [] = []
 dotEdges ((a,b,t):xs) = (show a) ++ " -> " ++ (show b) ++ " [color = \"#006391\", label=" ++ (show t) ++", fontsize=12];\n\n" ++ dotEdges xs
