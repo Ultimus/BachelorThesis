@@ -51,18 +51,11 @@ main = do
     writeOutput outh (generateCompressedDotOutput x)
     hClose outh
    -- print $ findMaximumLength (init vars) 1
-    let aa = (thrd $ (!!1) x) ++ " new"
-    print $ (!!1)x
-    print $ words aa
-    print $ (map nub $ map snd $ H.toList $H.map nub $ H.map words (nodeLabel x H.empty))
-    print $ dotNodes x
-    -- print x
+    print x
     -- $ init $ averageDistanceByCluster indices distances
 
 
     --let test = addDistanceToTuple work distances
-
-thrd (a,b,c) = c
 
 writeOutput outh outputString= do
     hPutStrLn outh outputString
@@ -183,12 +176,12 @@ generateCompressedDotOutput xs = "digraph visited_states {\ngraph [nodesep=1.5, 
 -- 1 -> 0 [color = "#006391", label="leave1", fontsize=12];
 
 dotNodes :: [(Int,Int, String)] -> String
-dotNodes xs = dotNodes' (zip (map nub $ map snd $ H.toList $H.map nub $ H.map words (nodeLabel xs H.empty)) [1..])
+dotNodes xs = dotNodes' (H.toList $H.map nub $ H.map words (nodeLabel xs H.empty))
 
 
-dotNodes' :: [([String], Int)] -> String
+dotNodes' :: [(Int, [String])] -> String
 dotNodes' [] = []
-dotNodes' ((text, identifier):xs) = (show identifier) ++ " [shape = record, color = \"blue\", fontsize = 12, label = \"|{" ++ (mapShow text) ++"}|\"];\n" ++ dotNodes' xs
+dotNodes' ((identifier, text):xs) = (show identifier) ++ " [shape = record, color = \"blue\", fontsize = 12, label = \"|{"++(show identifier) ++ " " ++ (mapShow text) ++"}|\"];\n" ++ dotNodes' xs
 
 -- " [shape=record, color="blue", fontsize=12, label="|{new, swap\n|# states: 9}|"];
 

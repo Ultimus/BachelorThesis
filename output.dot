@@ -1,55 +1,170 @@
 digraph visited_states {
 graph [nodesep=1.5, ranksep=1.5];
-1 [shape = record, color = "blue", fontsize = 12, label = "|{del ready new swap }|"];
-2 [shape = record, color = "blue", fontsize = 12, label = "|{del ready new swap }|"];
-3 [shape = record, color = "blue", fontsize = 12, label = "|{swap new del ready }|"];
-4 [shape = record, color = "blue", fontsize = 12, label = "|{swap new del ready }|"];
-5 [shape = record, color = "blue", fontsize = 12, label = "|{swap new del ready }|"];
+1 [shape = record, color = "blue", fontsize = 12, label = "|{1 ready del new }|"];
+2 [shape = record, color = "blue", fontsize = 12, label = "|{2 ready del new }|"];
+3 [shape = record, color = "blue", fontsize = 12, label = "|{3 ready del new }|"];
+4 [shape = record, color = "blue", fontsize = 12, label = "|{4 ready swap new del }|"];
+5 [shape = record, color = "blue", fontsize = 12, label = "|{5 new swap }|"];
+6 [shape = record, color = "blue", fontsize = 12, label = "|{6 ready new swap del }|"];
+7 [shape = record, color = "blue", fontsize = 12, label = "|{7 ready swap del new }|"];
+8 [shape = record, color = "blue", fontsize = 12, label = "|{8 ready swap del new }|"];
+9 [shape = record, color = "blue", fontsize = 12, label = "|{9 swap new }|"];
+10 [shape = record, color = "blue", fontsize = 12, label = "|{10 swap new }|"];
+11 [shape = record, color = "blue", fontsize = 12, label = "|{11 ready del swap }|"];
+12 [shape = record, color = "blue", fontsize = 12, label = "|{12 swap ready del }|"];
+13 [shape = record, color = "blue", fontsize = 12, label = "|{13 swap ready del }|"];
+14 [shape = record, color = "blue", fontsize = 12, label = "|{14 swap }|"];
 
 
-1 -> 2 [color = "#006391", label="new swap", fontsize=12];
+1 -> 2 [color = "#006391", label="new", fontsize=12];
 
-1 -> 1 [color = "#006391", label="new del ready swap", fontsize=12];
+1 -> 3 [color = "#006391", label="new", fontsize=12];
 
-1 -> 5 [color = "#006391", label="ready del", fontsize=12];
+1 -> 1 [color = "#006391", label="del", fontsize=12];
 
-2 -> 2 [color = "#006391", label="new del ready swap", fontsize=12];
+1 -> 4 [color = "#006391", label="ready", fontsize=12];
 
-2 -> 1 [color = "#006391", label="del ready", fontsize=12];
+2 -> 3 [color = "#006391", label="new", fontsize=12];
 
-2 -> 4 [color = "#006391", label="ready", fontsize=12];
+2 -> 2 [color = "#006391", label="new del", fontsize=12];
 
-1 -> 3 [color = "#006391", label="ready", fontsize=12];
+2 -> 1 [color = "#006391", label="del", fontsize=12];
 
-3 -> 3 [color = "#006391", label="new del ready", fontsize=12];
+2 -> 5 [color = "#006391", label="ready", fontsize=12];
 
-3 -> 2 [color = "#006391", label="new", fontsize=12];
+3 -> 3 [color = "#006391", label="new del", fontsize=12];
 
-3 -> 1 [color = "#006391", label="swap", fontsize=12];
+3 -> 2 [color = "#006391", label="del", fontsize=12];
 
-2 -> 3 [color = "#006391", label="del ready", fontsize=12];
+3 -> 1 [color = "#006391", label="del", fontsize=12];
 
-5 -> 2 [color = "#006391", label="new", fontsize=12];
+3 -> 4 [color = "#006391", label="ready", fontsize=12];
 
-5 -> 1 [color = "#006391", label="new swap", fontsize=12];
+3 -> 6 [color = "#006391", label="ready", fontsize=12];
 
-1 -> 4 [color = "#006391", label="del ready", fontsize=12];
+5 -> 6 [color = "#006391", label="new", fontsize=12];
 
-4 -> 4 [color = "#006391", label="new del ready", fontsize=12];
+5 -> 7 [color = "#006391", label="new", fontsize=12];
 
-4 -> 1 [color = "#006391", label="new", fontsize=12];
+5 -> 2 [color = "#006391", label="swap", fontsize=12];
 
-4 -> 2 [color = "#006391", label="swap", fontsize=12];
+7 -> 7 [color = "#006391", label="new ready del", fontsize=12];
 
-2 -> 5 [color = "#006391", label="del ready", fontsize=12];
+7 -> 5 [color = "#006391", label="del", fontsize=12];
 
-3 -> 5 [color = "#006391", label="swap", fontsize=12];
+7 -> 2 [color = "#006391", label="swap", fontsize=12];
 
-5 -> 5 [color = "#006391", label="new del ready", fontsize=12];
+4 -> 4 [color = "#006391", label="new del", fontsize=12];
 
-5 -> 4 [color = "#006391", label="swap", fontsize=12];
+4 -> 1 [color = "#006391", label="swap", fontsize=12];
 
-5 -> 3 [color = "#006391", label="swap", fontsize=12];
+7 -> 8 [color = "#006391", label="swap", fontsize=12];
+
+8 -> 8 [color = "#006391", label="new ready del", fontsize=12];
+
+8 -> 5 [color = "#006391", label="del", fontsize=12];
+
+8 -> 2 [color = "#006391", label="swap", fontsize=12];
+
+2 -> 8 [color = "#006391", label="ready", fontsize=12];
+
+2 -> 7 [color = "#006391", label="ready", fontsize=12];
+
+5 -> 8 [color = "#006391", label="new", fontsize=12];
+
+3 -> 8 [color = "#006391", label="ready", fontsize=12];
+
+3 -> 7 [color = "#006391", label="ready", fontsize=12];
+
+8 -> 7 [color = "#006391", label="swap", fontsize=12];
+
+4 -> 9 [color = "#006391", label="ready", fontsize=12];
+
+4 -> 3 [color = "#006391", label="swap", fontsize=12];
+
+6 -> 8 [color = "#006391", label="new", fontsize=12];
+
+6 -> 5 [color = "#006391", label="del", fontsize=12];
+
+6 -> 9 [color = "#006391", label="ready", fontsize=12];
+
+6 -> 3 [color = "#006391", label="swap", fontsize=12];
+
+6 -> 7 [color = "#006391", label="new", fontsize=12];
+
+6 -> 10 [color = "#006391", label="ready", fontsize=12];
+
+4 -> 10 [color = "#006391", label="ready", fontsize=12];
+
+9 -> 11 [color = "#006391", label="new", fontsize=12];
+
+9 -> 4 [color = "#006391", label="swap", fontsize=12];
+
+7 -> 6 [color = "#006391", label="del", fontsize=12];
+
+7 -> 11 [color = "#006391", label="ready", fontsize=12];
+
+7 -> 3 [color = "#006391", label="swap", fontsize=12];
+
+7 -> 12 [color = "#006391", label="ready", fontsize=12];
+
+8 -> 6 [color = "#006391", label="del", fontsize=12];
+
+8 -> 11 [color = "#006391", label="ready", fontsize=12];
+
+8 -> 3 [color = "#006391", label="swap", fontsize=12];
+
+4 -> 12 [color = "#006391", label="ready", fontsize=12];
+
+4 -> 13 [color = "#006391", label="ready", fontsize=12];
+
+12 -> 12 [color = "#006391", label="swap", fontsize=12];
+
+12 -> 11 [color = "#006391", label="swap", fontsize=12];
+
+8 -> 13 [color = "#006391", label="ready", fontsize=12];
+
+11 -> 9 [color = "#006391", label="del", fontsize=12];
+
+11 -> 13 [color = "#006391", label="ready", fontsize=12];
+
+11 -> 4 [color = "#006391", label="swap", fontsize=12];
+
+9 -> 12 [color = "#006391", label="new", fontsize=12];
+
+9 -> 6 [color = "#006391", label="swap", fontsize=12];
+
+10 -> 11 [color = "#006391", label="new", fontsize=12];
+
+10 -> 4 [color = "#006391", label="swap", fontsize=12];
+
+10 -> 13 [color = "#006391", label="new", fontsize=12];
+
+10 -> 6 [color = "#006391", label="swap", fontsize=12];
+
+11 -> 10 [color = "#006391", label="del", fontsize=12];
+
+11 -> 12 [color = "#006391", label="ready", fontsize=12];
+
+12 -> 9 [color = "#006391", label="del", fontsize=12];
+
+12 -> 14 [color = "#006391", label="ready", fontsize=12];
+
+12 -> 8 [color = "#006391", label="swap", fontsize=12];
+
+13 -> 10 [color = "#006391", label="del", fontsize=12];
+
+13 -> 14 [color = "#006391", label="ready", fontsize=12];
+
+13 -> 7 [color = "#006391", label="swap", fontsize=12];
+
+13 -> 13 [color = "#006391", label="swap", fontsize=12];
+
+13 -> 11 [color = "#006391", label="swap", fontsize=12];
+
+14 -> 8 [color = "#006391", label="swap", fontsize=12];
+
+14 -> 7 [color = "#006391", label="swap", fontsize=12];
 
 
 }
