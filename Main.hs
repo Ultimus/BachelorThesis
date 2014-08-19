@@ -41,6 +41,12 @@ main = do
     let shuffled = shuffle' work (length work) g
     let concrete = if shfl == 1 then shuffled else work --using lazy evaluation
     let output = zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
+    if (length output) < k then print "Maximum Cluster size not reached" else print ""
+    print "Clustersize:"
+    print $ zip [1..] (map length (map snd output))
+
+    print "Cluster Analysis : "
+    print $ clusterAnalysis output
     let indices = zip [1.. k] $ map extractIds $ map snd output
     --Graph stuff
 
@@ -51,7 +57,7 @@ main = do
     writeOutput outh (generateCompressedDotOutput x)
     hClose outh
    -- print $ findMaximumLength (init vars) 1
-    print x
+    print "finished"
     -- $ init $ averageDistanceByCluster indices distances
 
 
@@ -331,6 +337,17 @@ countBin :: Int -> [Token] -> Int
 countBin x [] = x
 countBin x (Bin i :xs) = countBin (x+1) xs
 countBin x (_:xs) = countBin x xs
+
+
+clusterAnalysis :: [(Int,[(V.Vector Double, Int)])]-> [(Int, [(Double, Double)])]
+clusterAnalysis xs = map clusterAnalysis' xs
+
+clusterAnalysis' :: (Int, [(V.Vector Double,Int)]) -> (Int, [(Double, Double)])
+clusterAnalysis' x = ((fst x) , findMinMax (snd x) 0)
+
+findMinMax :: [(V.Vector Double,Int)] -> Int->  [(Double, Double)]
+findMinMax [] _= []
+findMinMax vs i= if (i == (V.length (fst $ head vs))) then [] else [((minimum x), (maximum x))] ++ (findMinMax vs (i+1)) where x = map (V.! i) (map fst vs)
 
 
 

@@ -14,7 +14,7 @@ import System.Random
 -- | Type holding an object of any type and its associated feature vector
 type Point a = (V.Vector Double, a)
 
-type Point' a = (V.Vector Double, Int ,[[Int]])
+
 
 
 -- | Type representing a cluster (group) of vectors by its center and an id
@@ -23,13 +23,8 @@ data Cluster = Cluster {
   center :: !(V.Vector Double)
   } -- deriving (Show,Eq)
 
-data Cluster' = Cluster' {
-    cid' :: !Int,
-    center' :: !(V.Vector Double, [[Int]])
-}
 
 
-type Distance' = (V.Vector Double, [[Int]]) -> (V.Vector Double, [[Int]]) -> Double
 
 type Distance = V.Vector Double -> V.Vector Double -> Double
 
@@ -37,12 +32,6 @@ type Distance = V.Vector Double -> V.Vector Double -> Double
 euclidD :: Distance
 euclidD u v = V.sum $ V.zipWith (\a b -> (a - b)^2) u v
 
-
-euclidD' :: Distance'
-euclidD' u v = if (snd u == [] && snd v == []) then euclidD (fst u) (fst v)
-    else a + (fromIntegral b)
-        where a = euclidD (fst u) (fst v)
-              b = sum $ bitDifference (snd u) (snd v)
 
 {-#INLINE l1Dist#-}
 l1Dist :: Distance
