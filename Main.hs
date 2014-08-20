@@ -42,11 +42,13 @@ main = do
     let concrete = if shfl == 1 then shuffled else work --using lazy evaluation
     let output = zip [1..] $ K.kmeans k distanceFunction splitFunction concrete
     if (length output) < k then print "Maximum Cluster size not reached" else print ""
+    let clustersize = zip [1..] (map length (map snd output))
     print "Clustersize:"
-    print $ zip [1..] (map length (map snd output))
+    print clustersize
 
+    let clAna = clusterAnalysis output
     print "Cluster Analysis : "
-    print $ clusterAnalysis output
+    print clAna
     let indices = zip [1.. k] $ map extractIds $ map snd output
     --Graph stuff
 
@@ -54,7 +56,7 @@ main = do
     --let gr = delNode 0 $ buildGraph x empty
     --let listOfNodes = nodes gr
     --let distances =  fmap V.fromList $ calculateAllDistances ((length listOfNodes)-1) gr listOfNodes
-    writeOutput outh (generateCompressedDotOutput x)
+    writeOutput outh (generateCompressedDotOutput x clustersize clAna)
     hClose outh
    -- print $ findMaximumLength (init vars) 1
     print "finished"
@@ -176,8 +178,8 @@ generatePrologOutput :: (Eq a1, Num a1, Show a1, Show b) => [(a1, [(a, b)])] -> 
 generatePrologOutput [] = ""
 generatePrologOutput (h:input) = "cluster(" ++ (show $ fst h) ++ ", " ++ (show $ extractIds $ snd $ h) ++").\n"++ generatePrologOutput input
 
-generateCompressedDotOutput [] = ""
-generateCompressedDotOutput xs = "digraph visited_states {\ngraph [nodesep=1.5, ranksep=1.5];\n" ++ dotNodes xs ++"\n\n" ++ dotEdges xs ++ "\n}"
+generateCompressedDotOutput [] _ _= ""
+generateCompressedDotOutput xs cl clAna= "digraph visited_states {\ngraph [nodesep=1.5, ranksep=1.5];\n/*\nClustersize: \n" ++ (show cl) ++ "\n ClusterAnalysis: \n" ++ (show clAna) ++ "\n*/\n\n" ++ dotNodes xs ++"\n\n" ++ dotEdges xs ++ "\n}"
 
 -- 1 -> 0 [color = "#006391", label="leave1", fontsize=12];
 
