@@ -1,688 +1,715 @@
 digraph visited_states {
 graph [nodesep=1.5, ranksep=1.5];
-1 [shape = record, color = "blue", fontsize = 12, label = "|{1 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-3 [shape = record, color = "blue", fontsize = 12, label = "|{3 'ControllerReadVoltage' 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-4 [shape = record, color = "blue", fontsize = 12, label = "|{4 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'ControllerEvaluate' }|"];
-5 [shape = record, color = "blue", fontsize = 12, label = "|{5 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' 'ControllerEvaluate' }|"];
-6 [shape = record, color = "blue", fontsize = 12, label = "|{6 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerEvaluate' 'PredictorWait' 'ControllerReadVoltage' 'ControllerWait' 'Update' 'PredictorEvaluate' }|"];
-7 [shape = record, color = "blue", fontsize = 12, label = "|{7 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-8 [shape = record, color = "blue", fontsize = 12, label = "|{8 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerEvaluate' 'PredictorWait' 'ControllerWait' 'Update' 'PredictorEvaluate' }|"];
-9 [shape = record, color = "blue", fontsize = 12, label = "|{9 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' 'ControllerReadVoltage' }|"];
-10 [shape = record, color = "blue", fontsize = 12, label = "|{10 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'PredictorEvaluate' 'ControllerWait' 'ControllerEvaluate' 'PredictorWait' 'Update' }|"];
-11 [shape = record, color = "blue", fontsize = 12, label = "|{11 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'PredictorPredictVoltageChange' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-12 [shape = record, color = "blue", fontsize = 12, label = "|{12 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' 'ControllerEvaluate' }|"];
-13 [shape = record, color = "blue", fontsize = 12, label = "|{13 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'ControllerReadVoltage' }|"];
-14 [shape = record, color = "blue", fontsize = 12, label = "|{14 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' }|"];
-15 [shape = record, color = "blue", fontsize = 12, label = "|{15 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'PredictorPredictVoltageChange' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-16 [shape = record, color = "blue", fontsize = 12, label = "|{16 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerWait' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' }|"];
-17 [shape = record, color = "blue", fontsize = 12, label = "|{17 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerEvaluate' 'PredictorWait' 'ControllerWait' 'Update' 'PredictorEvaluate' }|"];
-18 [shape = record, color = "blue", fontsize = 12, label = "|{18 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' }|"];
-19 [shape = record, color = "blue", fontsize = 12, label = "|{19 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' }|"];
-20 [shape = record, color = "blue", fontsize = 12, label = "|{20 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' }|"];
-21 [shape = record, color = "blue", fontsize = 12, label = "|{21 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' }|"];
-22 [shape = record, color = "blue", fontsize = 12, label = "|{22 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-23 [shape = record, color = "blue", fontsize = 12, label = "|{23 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'ControllerEvaluate' }|"];
-24 [shape = record, color = "blue", fontsize = 12, label = "|{24 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerEvaluate' 'PredictorWait' 'ControllerWait' 'Update' 'PredictorEvaluate' }|"];
-25 [shape = record, color = "blue", fontsize = 12, label = "|{25 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerWait' 'ControllerEvaluate' 'Update' 'PredictorEvaluate' }|"];
-26 [shape = record, color = "blue", fontsize = 12, label = "|{26 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' }|"];
-27 [shape = record, color = "blue", fontsize = 12, label = "|{27 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-28 [shape = record, color = "blue", fontsize = 12, label = "|{28 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-29 [shape = record, color = "blue", fontsize = 12, label = "|{29 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' }|"];
-30 [shape = record, color = "blue", fontsize = 12, label = "|{30 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-31 [shape = record, color = "blue", fontsize = 12, label = "|{31 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
-32 [shape = record, color = "blue", fontsize = 12, label = "|{32 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' }|"];
-34 [shape = record, color = "blue", fontsize = 12, label = "|{34 'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerWait' 'PredictorWait' 'ControllerEvaluate' 'ControllerAdjustTapPosition' 'PredictorEvaluate' 'Update' }|"];
-35 [shape = record, color = "blue", fontsize = 12, label = "|{35 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'PredictorWait' 'ControllerWait' 'ControllerEvaluate' 'Update' 'PredictorEvaluate' }|"];
-36 [shape = record, color = "blue", fontsize = 12, label = "|{36 'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition' 'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorWait' 'Update' 'ControllerEvaluate' }|"];
+/*
+Clustersize: 
+[(1,64),(2,83),(3,71),(4,79),(5,76),(6,55),(7,79),(8,76),(9,67),(10,69),(11,68),(12,64),(13,72),(14,65),(15,58),(16,63),(17,49),(18,75),(19,56),(20,71)]
+ ClusterAnalysis: 
+[(1,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(1.0,2.0),(0.0,1.0),(1.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(1.0,1.0),(1.0,1.0)]),(2,[(3.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(3,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(4,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(1.0,2.0),(0.0,1.0),(1.0,1.0),(0.0,0.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(5,[(4.0,4.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0)]),(6,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(1.0,1.0),(1.0,1.0)]),(7,[(3.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(1.0,1.0),(1.0,1.0)]),(8,[(1.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0)]),(9,[(4.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(1.0,1.0),(1.0,1.0)]),(10,[(3.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(11,[(3.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(12,[(2.0,2.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(3.0,3.0),(0.0,1.0),(1.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(13,[(3.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(1.0,1.0),(1.0,1.0)]),(14,[(3.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(15,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,2.0),(0.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0)]),(16,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(17,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,0.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(18,[(3.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(19,[(2.0,3.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(2.0,3.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,0.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)]),(20,[(2.0,4.0),(1.0,1.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(1.0,2.0),(0.0,1.0),(1.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(0.0,1.0),(1.0,1.0),(1.0,1.0)])]
+ ClusterIds:
+cluster(1, [577,810,650,800,235,660,1120,656,682,943,987,579,431,1154,1353,1109,1077,527,1107,652,951,819,1108,795,494,492,1151,950,1097,499,734,792,1126,946,1300,843,730,1355,737,648,681,801,1086,653,236,1295,839,659,794,799,952,1103,576,1119,1313,564,1336,1160,498,495,811,1081,644,654]).
+cluster(2, [768,41,894,142,382,388,333,876,187,838,880,802,883,1196,764,760,1348,35,813,42,317,1193,884,409,353,881,318,384,707,387,340,36,678,338,354,129,882,43,221,37,613,1288,1209,816,323,916,298,34,383,1057,859,814,1194,155,605,408,1339,787,307,1197,784,1342,601,608,895,812,1263,394,1236,766,710,314,319,885,1228,312,357,1195,610,350,1322,313,337]).
+cluster(3, [977,191,413,1324,1235,1260,874,971,398,1220,371,668,380,972,1065,986,781,961,375,295,1043,1089,1270,1038,192,1223,1234,417,1071,396,1267,994,1214,1244,1349,877,1225,1041,391,1034,842,188,1189,1039,1344,412,1226,1238,416,776,1140,975,482,1047,622,684,667,1036,1217,1033,419,1280,999,1229,1257,964,372,381,367,973,1272]).
+cluster(4, [1132,467,1337,643,677,1155,80,60,55,662,1093,846,547,77,453,657,450,1113,663,59,665,1292,458,827,1297,1116,954,537,1117,1150,76,1146,671,583,63,949,461,1118,500,567,1289,471,100,1299,219,844,489,824,1346,821,1161,570,848,506,487,783,661,1153,510,1285,1114,641,572,958,505,798,1112,822,493,447,1294,61,54,548,642,445,586,575,820]).
+cluster(5, [515,826,518,504,1121,69,74,580,534,581,86,658,502,66,1331,449,519,496,72,1305,533,1159,1310,437,829,8,832,438,514,522,830,3,501,455,831,1127,71,1129,513,464,1290,1303,511,508,507,1128,463,1131,67,535,503,1157,516,85,1304,521,520,465,509,440,70,512,439,73,9,836,1125,456,1302,517,68,1130,825,50,436,1115]).
+cluster(6, [1023,283,434,265,530,1031,1308,227,164,365,203,204,163,366,290,429,1026,990,683,627,818,165,443,991,1147,934,264,263,1139,1243,288,988,1015,234,349,166,426,53,262,368,233,626,696,1105,168,963,185,793,406,139,140,1027,1014,428,52]).
+cluster(7, [1019,695,321,145,170,370,356,423,435,624,1205,873,853,292,433,1049,618,1242,559,360,39,1317,46,872,115,405,960,1168,355,167,690,791,144,687,393,623,729,400,49,146,414,1021,875,560,697,330,625,755,985,415,1325,1035,563,169,866,1177,545,401,404,266,754,700,733,339,929,47,850,871,161,361,879,1018,698,424,562,543,1037,369,686]).
+cluster(8, [674,5,4,104,1152,817,959,213,150,148,212,968,1072,172,970,19,173,1075,664,524,103,23,132,224,680,217,20,16,136,174,978,193,218,981,670,497,1275,888,1073,13,526,1074,1343,18,194,0,966,676,214,1076,675,22,525,131,15,1281,149,12,195,124,1148,1068,693,980,969,887,17,21,123,1067,122,105,402,14,532,130]).
+cluster(9, [1203,1256,1191,691,759,159,162,364,692,905,860,561,344,157,901,529,689,1347,702,45,345,669,385,756,1240,685,352,878,407,1241,753,1264,143,1187,363,1053,359,351,757,531,348,160,1059,51,403,1318,770,864,362,746,1345,767,48,346,249,1101,1020,1200,1058,1262,425,699,1199,358,1202,1334,688]).
+cluster(10, [945,479,646,719,474,938,1085,714,1207,1066,1096,1165,1048,666,852,941,241,715,931,927,1046,933,594,481,585,1052,937,983,849,1082,928,762,1098,930,716,1050,712,854,869,725,267,761,782,1286,1167,724,253,540,861,1164,942,254,1206,1070,858,752,1084,862,1211,1162,1178,1094,1099,790,1091,713,242,718,1095]).
+cluster(11, [320,327,190,98,316,336,147,257,306,300,158,926,135,1198,141,910,245,1216,44,322,727,965,30,334,655,152,717,1208,33,325,328,315,851,26,89,31,280,261,332,1287,29,1055,341,593,324,38,179,722,176,216,326,342,343,932,138,763,893,335,1169,1025,197,40,723,939,252,90,897,32]).
+cluster(12, [1005,208,1106,806,1051,432,1311,1143,630,1307,1274,1136,430,1245,1312,720,629,993,1124,1269,628,1259,1029,638,634,1123,206,1251,1253,1137,1171,637,1250,1266,632,1122,1032,1144,1254,427,386,1012,1268,1271,1016,1258,1309,1246,995,1188,1249,633,989,1315,1003,1170,1104,855,1186,1306,1000,1028,998,1252]).
+cluster(13, [248,904,919,758,769,908,1335,940,480,1080,565,1060,240,1333,1083,911,906,902,121,239,1326,286,1338,556,1092,244,728,744,251,909,588,287,486,740,900,741,1087,555,1100,903,255,250,1320,558,936,282,557,279,920,912,899,256,483,709,703,857,247,1163,1201,701,1301,751,914,865,863,281,238,704,1088,898,243,1102]).
+cluster(14, [1063,421,289,1277,1224,294,1024,621,297,1219,271,612,269,609,1218,614,329,867,1042,1210,1215,1265,331,399,291,1204,1212,1022,1227,422,1054,1190,1192,925,347,418,1222,156,1180,935,1239,1221,1213,1233,1174,1232,913,1231,278,1230,189,308,1056,1045,374,296,1173,397,373,615,1044,1040,974,1179,1064]).
+cluster(15, [454,102,469,259,672,459,246,466,58,523,473,137,462,96,460,62,457,472,568,10,83,56,82,95,468,237,78,673,64,448,11,550,442,81,566,57,1158,549,1,571,2,446,569,490,451,491,538,488,226,75,79,6,7,101,452,536,441,65]).
+cluster(16, [607,304,223,181,785,835,201,1156,202,611,301,1008,1007,133,841,134,1237,180,635,1030,1011,1004,834,979,1351,639,207,1062,805,389,376,28,976,97,199,1090,815,679,1006,302,649,390,1009,1316,225,645,833,604,182,786,1352,378,198,600,1061,222,1248,200,379,27,229,651,636]).
+cluster(17, [1013,957,273,955,956,1135,1354,1319,171,1138,1175,1261,1142,992,1276,210,1278,232,1273,310,647,868,1166,311,823,231,1172,303,845,967,1356,1357,293,856,205,1350,1001,228,1359,1358,211,996,1017,1247,1255,953,631,1134,444]).
+cluster(18, [546,99,602,582,603,732,1330,1341,1323,93,1329,708,620,94,392,617,1185,299,126,765,592,551,921,587,892,1321,107,738,896,804,91,305,775,119,84,705,554,711,773,117,731,584,749,395,1328,748,747,542,616,597,924,274,116,596,539,112,1298,803,25,1183,1279,619,1184,120,114,552,108,476,726,808,111,780,118,275,113]).
+cluster(19, [891,721,151,1133,478,128,886,982,230,915,947,589,984,110,796,88,485,184,907,807,209,1110,178,889,411,1141,125,186,544,309,1002,706,470,410,109,87,183,270,24,127,106,788,196,890,215,175,789,177,694,377,809,153,997,1010,420,154]).
+cluster(20, [260,870,595,268,1078,797,1327,284,1314,220,837,1149,285,948,475,92,1079,1283,599,739,272,779,276,574,640,1182,771,598,745,590,944,277,774,1111,840,736,553,917,1340,923,1181,578,847,828,735,1284,528,1293,591,484,742,777,922,778,1069,743,573,606,1296,1176,1145,1291,772,258,962,477,918,541,1282,750,1332]).
 
+*/
 
-10 -> 10 [color = "#006391", label="'PredictorEvaluate' 'ControllerAdjustTapPosition' 'ControllerWait' 'ControllerEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update'", fontsize=12];
+1 [shape = record, color = "blue", fontsize = 12, label = "|{1 'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesExtreme' 'ObstacleStopsTravelFaster' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleStopsTravelSlower' 'ObstacleDistanceBecomesVeryClose' 'ObstacleDistanceBecomesClose' 'ObstacleDisappears' 'VehicleReachesCruiseSpeed' 'ObstacleDistanceBecomesBig' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'ObstacleBecomesOld' 'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+2 [shape = record, color = "blue", fontsize = 12, label = "|{2 'ObstacleStartsTravelFaster' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'ObstacleStartsTravelSlower' 'VehicleLeavesCruiseSpeed' 'SetCruiseSpeed' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesExtreme' 'VehicleManageObstacle' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'ObstacleBecomesOld' 'ObstacleStopsTravelSlower' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeDelayFinished' }|"];
+3 [shape = record, color = "blue", fontsize = 12, label = "|{3 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStopsTravelSlower' 'ObstacleStopsTravelFaster' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleDistanceBecomesClose' 'VehicleReachesCruiseSpeed' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleDisappears' 'ExternalForcesBecomesNormal' 'CCInitialisationDelayFinished' 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'ObstacleBecomesOld' 'CruiseSpeedChangeDelayFinished' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+4 [shape = record, color = "blue", fontsize = 12, label = "|{4 'ObstacleStopsTravelFaster' 'ObstacleDistanceBecomesClose' 'ObstacleStopsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleDistanceBecomesVeryClose' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleDisappears' 'ExternalForcesBecomesNormal' 'CCInitialisationDelayFinished' 'ObstacleBecomesOld' 'CruiseSpeedChangeDelayFinished' 'VehicleReachesCruiseSpeed' 'ObstacleDistanceBecomesBig' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+5 [shape = record, color = "blue", fontsize = 12, label = "|{5 'ObstacleStartsTravelSlower' 'ObstacleStartsTravelFaster' 'ObstacleDisappears' 'CruiseBecomesAllowed' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseBecomesNotAllowed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseOff' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'ObstacleBecomesOld' }|"];
+6 [shape = record, color = "blue", fontsize = 12, label = "|{6 'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesClose' 'ObstacleStopsTravelFaster' 'SetCruiseSpeed' 'ObstacleBecomesOld' 'ExternalForcesBecomesNormal' 'ObstacleStopsTravelSlower' 'VehicleReachesCruiseSpeed' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'VehicleLeavesCruiseSpeed' 'CruiseSpeedChangeDelayFinished' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleDistanceBecomesVeryClose' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDistanceBecomesBig' }|"];
+7 [shape = record, color = "blue", fontsize = 12, label = "|{7 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'CruiseSpeedChangeFinished' 'CruiseBecomesNotAllowed' 'CruiseOff' 'VehicleReachesCruiseSpeed' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'CruiseSpeedChangeDelayFinished' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStopsTravelSlower' 'VehicleExceedsMaxCruiseSpeed' }|"];
+8 [shape = record, color = "blue", fontsize = 12, label = "|{8 'ObstacleAppearsWhenCruiseActive' 'ObstacleAppearsWhenCruiseInactive' 'CruiseBecomesAllowed' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseBecomesNotAllowed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseOff' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'CCInitialisationDelayFinished' 'ObstacleBecomesOld' 'CruiseSpeedChangeDelayFinished' }|"];
+9 [shape = record, color = "blue", fontsize = 12, label = "|{9 'ObstacleStartsTravelFaster' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'ObstacleDisappears' 'ExternalForcesBecomesExtreme' 'VehicleLeavesCruiseSpeed' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleBecomesOld' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+10 [shape = record, color = "blue", fontsize = 12, label = "|{10 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDistanceBecomesVeryClose' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'VehicleExceedsMaxCruiseSpeed' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'ObstacleStopsTravelSlower' }|"];
+11 [shape = record, color = "blue", fontsize = 12, label = "|{11 'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleBecomesOld' 'ObstacleDisappears' 'ObstacleDistanceBecomesVeryClose' 'CCInitialisationDelayFinished' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeDelayFinished' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesExtreme' }|"];
+12 [shape = record, color = "blue", fontsize = 12, label = "|{12 'ObstacleStopsTravelFaster' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleDisappears' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleFallsBelowMaxCruiseSpeed' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'ObstacleBecomesOld' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+13 [shape = record, color = "blue", fontsize = 12, label = "|{13 'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'ObstacleStartsTravelFaster' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStartsTravelSlower' 'ExternalForcesBecomesExtreme' 'ObstacleStopsTravelSlower' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleDisappears' 'CruiseBecomesNotAllowed' 'CruiseOff' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'ObstacleBecomesOld' 'VehicleExceedsMaxCruiseSpeed' }|"];
+14 [shape = record, color = "blue", fontsize = 12, label = "|{14 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'ObstacleStopsTravelSlower' 'ObstacleStartsTravelFaster' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesExtreme' 'VehicleLeavesCruiseSpeed' 'ObstacleStartsTravelSlower' 'CruiseSpeedChangeDelayFinished' 'ObstacleBecomesOld' 'ObstacleDistanceBecomesVeryClose' }|"];
+15 [shape = record, color = "blue", fontsize = 12, label = "|{15 'ObstacleBecomesOld' 'VehicleReachesCruiseSpeed' 'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesVeryClose' 'VehicleExceedsMaxCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleStopsTravelFaster' 'ObstacleDisappears' 'CruiseBecomesAllowed' 'VehicleLeavesCruiseSpeed' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ExternalForcesBecomesExtreme' 'CCInitialisationDelayFinished' 'ObstacleDistanceBecomesBig' 'CruiseSpeedChangeDelayFinished' }|"];
+16 [shape = record, color = "blue", fontsize = 12, label = "|{16 'ObstacleStopsTravelFaster' 'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleDistanceBecomesBig' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStopsTravelSlower' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+17 [shape = record, color = "blue", fontsize = 12, label = "|{17 'ObstacleStopsTravelFaster' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'ObstacleDistanceBecomesBig' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesNormal' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleDisappears' 'VehicleReachesCruiseSpeed' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'ExternalForcesBecomesExtreme' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+18 [shape = record, color = "blue", fontsize = 12, label = "|{18 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'SetCruiseSpeed' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'VehicleManageObstacle' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleStopsTravelSlower' 'ObstacleDisappears' 'ObstacleStartsTravelFaster' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'ObstacleStartsTravelSlower' 'CruiseSpeedChangeDelayFinished' }|"];
+19 [shape = record, color = "blue", fontsize = 12, label = "|{19 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'VehicleLeavesCruiseSpeed' 'ObstacleBecomesOld' 'ObstacleStopsTravelFaster' 'ExternalForcesBecomesExtreme' 'ObstacleStopsTravelSlower' 'ObstacleDistanceBecomesBig' 'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'CruiseBecomesNotAllowed' 'CruiseOff' }|"];
+20 [shape = record, color = "blue", fontsize = 12, label = "|{20 'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished' 'VehicleReachesCruiseSpeed' 'SetCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDistanceBecomesBig' 'ObstacleDisappears' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesClose' 'ExternalForcesBecomesExtreme' 'ObstacleStopsTravelFaster' 'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' }|"];
 
-10 -> 22 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
 
-10 -> 28 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+8 -> 8 [color = "#006391", label="'CruiseBecomesAllowed' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseBecomesNotAllowed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseOff' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'CCInitialisationDelayFinished' 'ObstacleBecomesOld' 'CruiseSpeedChangeDelayFinished'", fontsize=12];
 
-10 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+8 -> 15 [color = "#006391", label="'ObstacleAppearsWhenCruiseInactive' 'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-10 -> 3 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+8 -> 5 [color = "#006391", label="'ObstacleAppearsWhenCruiseInactive'", fontsize=12];
 
-10 -> 27 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+15 -> 15 [color = "#006391", label="'CruiseBecomesAllowed' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseBecomesNotAllowed' 'SetCruiseSpeed' 'CruiseOff' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesNormal' 'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'VehicleReachesCruiseSpeed' 'VehicleManageObstacle' 'CCInitialisationDelayFinished' 'ObstacleDistanceBecomesClose' 'ObstacleDistanceBecomesBig' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished'", fontsize=12];
 
-10 -> 16 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+15 -> 5 [color = "#006391", label="'ObstacleStopsTravelFaster' 'ObstacleStopsTravelSlower'", fontsize=12];
 
-22 -> 22 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+15 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-22 -> 28 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+5 -> 5 [color = "#006391", label="'CruiseBecomesAllowed' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseBecomesNotAllowed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseOff' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeDelayFinished' 'ObstacleBecomesOld'", fontsize=12];
 
-22 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+5 -> 15 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-22 -> 30 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+5 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-22 -> 1 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+8 -> 19 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-22 -> 7 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+8 -> 18 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-1 -> 1 [color = "#006391", label="'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerAdjustTapPosition' 'Update' 'ControllerEvaluate'", fontsize=12];
+8 -> 11 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-1 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+8 -> 16 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-1 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+11 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-1 -> 30 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+11 -> 11 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesExtreme' 'ExternalForcesBecomesNormal' 'ObstacleStartsTravelSlower' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-1 -> 19 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 2 [color = "#006391", label="'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'SetCruiseSpeed'", fontsize=12];
 
-1 -> 35 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 7 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-1 -> 24 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 16 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-28 -> 22 [color = "#006391", label="'ControllerReadVoltage' 'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-28 -> 28 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+11 -> 9 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'CruiseSpeedChangeFinished' 'ObstacleBecomesOld'", fontsize=12];
 
-28 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+9 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-28 -> 30 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+9 -> 7 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'ObstacleStartsTravelSlower' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-28 -> 1 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+9 -> 9 [color = "#006391", label="'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'SetCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld'", fontsize=12];
 
-28 -> 7 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerReadVoltage'", fontsize=12];
+9 -> 11 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-15 -> 36 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+9 -> 6 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-15 -> 13 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+9 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-15 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+15 -> 4 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-15 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+15 -> 18 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'VehicleManageObstacle'", fontsize=12];
 
-15 -> 32 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+18 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'VehicleManageObstacle'", fontsize=12];
 
-15 -> 9 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+18 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStartsTravelFaster' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-3 -> 30 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+18 -> 11 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-3 -> 13 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+18 -> 18 [color = "#006391", label="'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'VehicleLeavesCruiseSpeed' 'ObstacleStopsTravelSlower' 'VehicleReachesCruiseSpeed' 'SetCruiseSpeed' 'ObstacleStartsTravelSlower' 'ObstacleDistanceBecomesVeryClose' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished'", fontsize=12];
 
-3 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+18 -> 20 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'VehicleLeavesCruiseSpeed' 'ExternalForcesBecomesExtreme' 'SetCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-3 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+18 -> 16 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'CCInitialisationFinished' 'VehicleManageObstacle' 'ObstacleStartsTravelFaster' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-3 -> 3 [color = "#006391", label="'ControllerWait' 'PredictorEvaluate' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+18 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-3 -> 1 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+8 -> 2 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-27 -> 1 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+18 -> 7 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ObstacleStopsTravelSlower' 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-27 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+18 -> 13 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-27 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+8 -> 6 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-27 -> 3 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+11 -> 6 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-27 -> 27 [color = "#006391", label="'ControllerWait' 'PredictorEvaluate' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+11 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'VehicleLeavesCruiseSpeed' 'ObstacleStartsTravelSlower' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-27 -> 7 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+6 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDistanceBecomesClose' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleDistanceBecomesBig'", fontsize=12];
 
-27 -> 25 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition'", fontsize=12];
+6 -> 6 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'ObstacleDistanceBecomesClose' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-27 -> 10 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+6 -> 7 [color = "#006391", label="'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleStopsTravelFaster' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-27 -> 28 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+6 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-16 -> 29 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+6 -> 17 [color = "#006391", label="'ObstacleBecomesOld'", fontsize=12];
 
-16 -> 28 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+19 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesBig' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-16 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+19 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'ExternalForcesBecomesExtreme' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-16 -> 3 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+19 -> 11 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesExtreme' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-16 -> 25 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+19 -> 16 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesExtreme' 'VehicleManageObstacle'", fontsize=12];
 
-16 -> 27 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 6 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleLeavesCruiseSpeed'", fontsize=12];
 
-16 -> 16 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate'", fontsize=12];
+19 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-16 -> 10 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 2 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleStopsTravelFaster' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle'", fontsize=12];
 
-16 -> 23 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+19 -> 3 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld'", fontsize=12];
 
-16 -> 32 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+19 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleLeavesCruiseSpeed' 'ObstacleBecomesOld' 'VehicleManageObstacle'", fontsize=12];
 
-36 -> 36 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+16 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesBig'", fontsize=12];
 
-36 -> 14 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleDistanceBecomesClose' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-36 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 16 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ObstacleDistanceBecomesClose' 'ExternalForcesBecomesExtreme' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'VehicleLeavesCruiseSpeed'", fontsize=12];
 
-30 -> 30 [color = "#006391", label="'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+16 -> 6 [color = "#006391", label="'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-30 -> 14 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 11 [color = "#006391", label="'ObstacleStopsTravelFaster' 'SetCruiseSpeed' 'ObstacleStopsTravelSlower' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-30 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-30 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 17 [color = "#006391", label="'ObstacleBecomesOld' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-7 -> 7 [color = "#006391", label="'ControllerReadVoltage' 'ControllerWait' 'PredictorEvaluate' 'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+17 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDistanceBecomesBig' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-7 -> 1 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition'", fontsize=12];
+17 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleDistanceBecomesClose' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-7 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+17 -> 16 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-7 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+17 -> 12 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-7 -> 30 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+17 -> 17 [color = "#006391", label="'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ExternalForcesBecomesNormal'", fontsize=12];
 
-7 -> 28 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+17 -> 11 [color = "#006391", label="'ObstacleStopsTravelFaster' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleStopsTravelSlower' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-30 -> 5 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+17 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-30 -> 35 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+8 -> 4 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-30 -> 24 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+8 -> 20 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-7 -> 23 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 17 [color = "#006391", label="'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed'", fontsize=12];
 
-7 -> 29 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+17 -> 6 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-7 -> 17 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+17 -> 1 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-22 -> 23 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+17 -> 13 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-22 -> 29 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-22 -> 6 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerReadVoltage'", fontsize=12];
+13 -> 13 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ObstacleStopsTravelSlower' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleStartsTravelSlower' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-17 -> 17 [color = "#006391", label="'ControllerEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerReadVoltage' 'ControllerWait' 'Update' 'ControllerAdjustTapPosition' 'PredictorEvaluate'", fontsize=12];
+13 -> 10 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStopsTravelSlower' 'SetCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-17 -> 23 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 11 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleReachesCruiseSpeed' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-17 -> 29 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 6 [color = "#006391", label="'ObstacleStartsTravelFaster' 'SetCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-17 -> 7 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 15 [color = "#006391", label="'ObstacleStartsTravelSlower' 'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleStartsTravelFaster' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-31 -> 31 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+13 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-31 -> 14 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+13 -> 9 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-31 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+11 -> 10 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'VehicleLeavesCruiseSpeed' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal'", fontsize=12];
 
-31 -> 2 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 13 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed'", fontsize=12];
 
-31 -> 4 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 15 [color = "#006391", label="'ObstacleStartsTravelFaster' 'CruiseBecomesNotAllowed' 'CruiseOff' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-1 -> 12 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 20 [color = "#006391", label="'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle'", fontsize=12];
 
-12 -> 24 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+8 -> 7 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-12 -> 12 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerEvaluate'", fontsize=12];
+20 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'ObstacleDistanceBecomesBig' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-12 -> 4 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+20 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-12 -> 20 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+20 -> 11 [color = "#006391", label="'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleStopsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-12 -> 19 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 10 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStopsTravelFaster' 'ObstacleStopsTravelSlower' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-12 -> 35 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 20 [color = "#006391", label="'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesExtreme' 'ObstacleStopsTravelFaster' 'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-12 -> 1 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesVeryClose' 'VehicleManageObstacle'", fontsize=12];
 
-31 -> 33 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-31 -> 20 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 4 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesBig' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-36 -> 33 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+18 -> 6 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-36 -> 26 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 13 [color = "#006391", label="'ExternalForcesBecomesNormal' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-36 -> 20 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 20 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'VehicleManageObstacle' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed'", fontsize=12];
 
-36 -> 5 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+6 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleManageObstacle'", fontsize=12];
 
-30 -> 26 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+17 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-30 -> 20 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+17 -> 3 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal'", fontsize=12];
 
-5 -> 5 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerEvaluate'", fontsize=12];
+17 -> 7 [color = "#006391", label="'ObstacleStopsTravelSlower' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-5 -> 2 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+11 -> 18 [color = "#006391", label="'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'ObstacleStartsTravelSlower' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'SetCruiseSpeed'", fontsize=12];
 
-5 -> 33 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+11 -> 19 [color = "#006391", label="'ObstacleStartsTravelFaster' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-5 -> 26 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+16 -> 18 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesNormal'", fontsize=12];
 
-5 -> 30 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+11 -> 17 [color = "#006391", label="'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-5 -> 20 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+2 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-30 -> 19 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+2 -> 2 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'ObstacleStartsTravelSlower' 'ObstacleStopsTravelSlower' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished'", fontsize=12];
 
-19 -> 19 [color = "#006391", label="'ControllerReadVoltage' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate' 'ControllerAdjustTapPosition'", fontsize=12];
+2 -> 11 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-19 -> 2 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+2 -> 7 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-19 -> 33 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+2 -> 16 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'VehicleManageObstacle'", fontsize=12];
 
-19 -> 5 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+2 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-19 -> 35 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+9 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleStartsTravelSlower' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-19 -> 30 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+2 -> 9 [color = "#006391", label="'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-19 -> 24 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+2 -> 18 [color = "#006391", label="'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-24 -> 24 [color = "#006391", label="'ControllerEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'Update' 'PredictorEvaluate'", fontsize=12];
+2 -> 19 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-24 -> 19 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+9 -> 2 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'VehicleReachesCruiseSpeed' 'SetCruiseSpeed' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-24 -> 35 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+6 -> 3 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-24 -> 30 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+6 -> 16 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleReachesCruiseSpeed' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-19 -> 1 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+6 -> 9 [color = "#006391", label="'ObstacleStopsTravelSlower' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-35 -> 35 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerEvaluate' 'Update' 'PredictorEvaluate'", fontsize=12];
+7 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-35 -> 19 [color = "#006391", label="'ControllerReadVoltage' 'PredictorPredictVoltageChange'", fontsize=12];
+7 -> 7 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesExtreme' 'ObstacleStartsTravelSlower' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStopsTravelSlower' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-35 -> 2 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+7 -> 9 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-35 -> 33 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+7 -> 11 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesExtreme' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-35 -> 26 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+7 -> 6 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-35 -> 1 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'PredictorWait'", fontsize=12];
+7 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-35 -> 24 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+3 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-35 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 3 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'VehicleFallsBelowMaxCruiseSpeed' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-35 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 6 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-35 -> 30 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+3 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-24 -> 1 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+3 -> 16 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-24 -> 12 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+3 -> 9 [color = "#006391", label="'ObstacleStopsTravelSlower' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-24 -> 4 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-24 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 2 [color = "#006391", label="'CCInitialisationFinished' 'ObstacleStopsTravelSlower' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleBecomesOld' 'ObstacleStopsTravelFaster' 'VehicleManageObstacle'", fontsize=12];
 
-24 -> 20 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 14 [color = "#006391", label="'CCInitialisationFinished' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'SetCruiseSpeed'", fontsize=12];
 
-1 -> 7 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+16 -> 3 [color = "#006391", label="'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-4 -> 4 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerEvaluate'", fontsize=12];
+2 -> 12 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
 
-4 -> 14 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+2 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-4 -> 20 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+2 -> 3 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-4 -> 2 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+2 -> 14 [color = "#006391", label="'VehicleLeavesCruiseSpeed' 'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-28 -> 23 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+3 -> 7 [color = "#006391", label="'CCInitialisationFinished' 'ObstacleStopsTravelSlower' 'VehicleExceedsMaxCruiseSpeed' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-28 -> 29 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerReadVoltage'", fontsize=12];
+3 -> 2 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleStopsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-28 -> 6 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+9 -> 19 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-28 -> 26 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+19 -> 7 [color = "#006391", label="'CCInitialisationFinished' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-28 -> 18 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+3 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-6 -> 6 [color = "#006391", label="'ControllerEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'Update' 'PredictorEvaluate'", fontsize=12];
+3 -> 11 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleStopsTravelSlower'", fontsize=12];
 
-6 -> 23 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+3 -> 17 [color = "#006391", label="'ExternalForcesBecomesExtreme' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-6 -> 29 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+14 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-6 -> 28 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+14 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'VehicleManageObstacle'", fontsize=12];
 
-6 -> 22 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+14 -> 14 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesExtreme' 'VehicleLeavesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleStartsTravelSlower' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-6 -> 20 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 3 [color = "#006391", label="'CCInitialisationFinished' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-6 -> 12 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 18 [color = "#006391", label="'VehicleReachesCruiseSpeed' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal'", fontsize=12];
 
-6 -> 8 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 7 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesNormal' 'SetCruiseSpeed'", fontsize=12];
 
-28 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-28 -> 8 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+6 -> 12 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleBecomesOld' 'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-13 -> 14 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+6 -> 1 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'ObstacleBecomesOld'", fontsize=12];
 
-13 -> 13 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait'", fontsize=12];
+7 -> 2 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleReachesCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld'", fontsize=12];
 
-13 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+4 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'SetCruiseSpeed' 'CruiseOff' 'ExternalForcesBecomesExtreme' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-13 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+4 -> 4 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesExtreme' 'ExternalForcesBecomesNormal' 'CCInitialisationDelayFinished' 'ObstacleBecomesOld' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleDistanceBecomesBig' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-11 -> 31 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+4 -> 5 [color = "#006391", label="'ObstacleStopsTravelFaster' 'ObstacleStopsTravelSlower'", fontsize=12];
 
-11 -> 13 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+4 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-11 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate'", fontsize=12];
+15 -> 19 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-11 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 10 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-15 -> 31 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+19 -> 20 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesExtreme' 'VehicleManageObstacle'", fontsize=12];
 
-8 -> 8 [color = "#006391", label="'ControllerEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'Update' 'PredictorEvaluate'", fontsize=12];
+19 -> 18 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-8 -> 23 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 13 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ObstacleBecomesOld' 'VehicleLeavesCruiseSpeed'", fontsize=12];
 
-8 -> 18 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-8 -> 28 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 3 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-8 -> 17 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+4 -> 1 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-8 -> 20 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+15 -> 1 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleBecomesOld' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-8 -> 12 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+1 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDistanceBecomesBig' 'ExternalForcesBecomesExtreme' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-26 -> 26 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait'", fontsize=12];
+1 -> 1 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ObstacleDistanceBecomesBig' 'ExternalForcesBecomesExtreme' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-26 -> 14 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+1 -> 4 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleDistanceBecomesBig'", fontsize=12];
 
-26 -> 2 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+1 -> 5 [color = "#006391", label="'ObstacleStopsTravelFaster' 'ObstacleStopsTravelSlower'", fontsize=12];
 
-26 -> 33 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+1 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-26 -> 5 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+5 -> 4 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-26 -> 36 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition'", fontsize=12];
+5 -> 1 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-26 -> 20 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+8 -> 1 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-20 -> 20 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate'", fontsize=12];
+8 -> 9 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-20 -> 4 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+18 -> 10 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'SetCruiseSpeed' 'ObstacleStopsTravelSlower' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed' 'VehicleLeavesCruiseSpeed'", fontsize=12];
 
-20 -> 5 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+4 -> 19 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-20 -> 26 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 18 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-20 -> 36 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 7 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'ObstacleStopsTravelSlower' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed'", fontsize=12];
 
-13 -> 21 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+7 -> 13 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-26 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+7 -> 1 [color = "#006391", label="'ObstacleStartsTravelFaster' 'CCInitialisationFinished' 'VehicleManageObstacle'", fontsize=12];
 
-21 -> 2 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+15 -> 11 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'ObstacleStopsTravelSlower' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-21 -> 21 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate'", fontsize=12];
+4 -> 20 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme' 'SetCruiseSpeed'", fontsize=12];
 
-21 -> 32 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+15 -> 20 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'SetCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-21 -> 13 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition'", fontsize=12];
+20 -> 4 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleDistanceBecomesBig'", fontsize=12];
 
-21 -> 11 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 1 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesNormal' 'SetCruiseSpeed'", fontsize=12];
 
-11 -> 21 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 5 [color = "#006391", label="'ObstacleStopsTravelSlower' 'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-9 -> 20 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+1 -> 20 [color = "#006391", label="'SetCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleDistanceBecomesClose' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-9 -> 13 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+18 -> 2 [color = "#006391", label="'ObstacleStopsTravelSlower' 'CCInitialisationFinished' 'VehicleManageObstacle' 'ObstacleDistanceBecomesVeryClose' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-9 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+20 -> 18 [color = "#006391", label="'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-9 -> 9 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate'", fontsize=12];
+20 -> 16 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-9 -> 32 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 2 [color = "#006391", label="'ObstacleStopsTravelSlower' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-9 -> 15 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+16 -> 7 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-32 -> 5 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+12 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-32 -> 21 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+12 -> 12 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'VehicleLeavesCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-32 -> 32 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate'", fontsize=12];
+12 -> 6 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed' 'VehicleManageObstacle' 'ObstacleDistanceBecomesClose' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-32 -> 15 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition'", fontsize=12];
+12 -> 17 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-32 -> 9 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+12 -> 1 [color = "#006391", label="'ObstacleDistanceBecomesClose'", fontsize=12];
 
-32 -> 26 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+12 -> 7 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-15 -> 26 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+12 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-15 -> 21 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+12 -> 16 [color = "#006391", label="'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-14 -> 14 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate'", fontsize=12];
+12 -> 20 [color = "#006391", label="'ObstacleDistanceBecomesClose'", fontsize=12];
 
-14 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+12 -> 2 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-14 -> 36 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+15 -> 6 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'SetCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-3 -> 32 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+15 -> 13 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-3 -> 34 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+15 -> 7 [color = "#006391", label="'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-34 -> 20 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+20 -> 17 [color = "#006391", label="'ObstacleBecomesOld' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-34 -> 13 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+17 -> 4 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesBig'", fontsize=12];
 
-34 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+17 -> 10 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-34 -> 9 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+1 -> 17 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-34 -> 34 [color = "#006391", label="'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerEvaluate' 'ControllerAdjustTapPosition' 'PredictorEvaluate' 'Update'", fontsize=12];
+1 -> 9 [color = "#006391", label="'ObstacleStopsTravelFaster' 'ObstacleStopsTravelSlower'", fontsize=12];
 
-34 -> 32 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+4 -> 18 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-34 -> 3 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+8 -> 10 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-3 -> 21 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+8 -> 3 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-34 -> 24 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+9 -> 3 [color = "#006391", label="'ObstacleStartsTravelSlower' 'ObstacleStartsTravelFaster'", fontsize=12];
 
-34 -> 12 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+7 -> 18 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleStartsTravelSlower' 'SetCruiseSpeed'", fontsize=12];
 
-3 -> 25 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+18 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-27 -> 34 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition'", fontsize=12];
+2 -> 10 [color = "#006391", label="'SetCruiseSpeed' 'VehicleLeavesCruiseSpeed'", fontsize=12];
 
-34 -> 25 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+2 -> 4 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-34 -> 27 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+10 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-25 -> 25 [color = "#006391", label="'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerAdjustTapPosition' 'ControllerWait' 'ControllerEvaluate' 'Update' 'PredictorEvaluate'", fontsize=12];
+10 -> 10 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CCInitialisationDelayFinished' 'CruiseSpeedChangeFinished' 'CruiseSpeedChangeDelayFinished' 'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleStartsTravelSlower' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleStopsTravelSlower'", fontsize=12];
 
-25 -> 27 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+10 -> 11 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleBecomesOld'", fontsize=12];
 
-25 -> 34 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+10 -> 16 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-7 -> 19 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+10 -> 8 [color = "#006391", label="'ObstacleDisappears'", fontsize=12];
 
-7 -> 18 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 12 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'VehicleLeavesCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-17 -> 8 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+10 -> 13 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'ObstacleBecomesOld' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-17 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+10 -> 18 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'ObstacleStartsTravelSlower' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-17 -> 20 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+10 -> 4 [color = "#006391", label="'ObstacleStartsTravelFaster' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-17 -> 24 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+18 -> 4 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-17 -> 19 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+18 -> 1 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-17 -> 18 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+18 -> 3 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'CCInitialisationFinished' 'VehicleManageObstacle'", fontsize=12];
 
-1 -> 18 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+1 -> 7 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-1 -> 17 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+1 -> 18 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-1 -> 8 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+1 -> 3 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-25 -> 19 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+1 -> 13 [color = "#006391", label="'CCInitialisationFinished' 'ObstacleStopsTravelFaster' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-25 -> 21 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+7 -> 15 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff' 'ExternalForcesBecomesExtreme' 'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'VehicleManageObstacle' 'ObstacleStartsTravelFaster'", fontsize=12];
 
-25 -> 32 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+20 -> 6 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-25 -> 10 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+20 -> 9 [color = "#006391", label="'ObstacleStopsTravelSlower' 'VehicleExceedsMaxCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-25 -> 18 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+9 -> 10 [color = "#006391", label="'SetCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'VehicleManageObstacle'", fontsize=12];
 
-25 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+9 -> 1 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-25 -> 3 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+9 -> 20 [color = "#006391", label="'ObstacleStartsTravelSlower' 'ObstacleStartsTravelFaster'", fontsize=12];
 
-10 -> 25 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+9 -> 13 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-27 -> 18 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+2 -> 20 [color = "#006391", label="'ObstacleStartsTravelSlower' 'VehicleLeavesCruiseSpeed' 'ObstacleStartsTravelFaster'", fontsize=12];
 
-27 -> 21 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+20 -> 3 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'ExternalForcesBecomesNormal' 'ObstacleBecomesOld'", fontsize=12];
 
-10 -> 17 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+3 -> 4 [color = "#006391", label="'SetCruiseSpeed' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-10 -> 8 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+3 -> 20 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-10 -> 11 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 18 [color = "#006391", label="'CCInitialisationFinished' 'VehicleReachesCruiseSpeed' 'VehicleManageObstacle'", fontsize=12];
 
-10 -> 9 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 1 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-10 -> 34 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 10 [color = "#006391", label="'ObstacleStopsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleStopsTravelFaster'", fontsize=12];
 
-27 -> 17 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+10 -> 7 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-27 -> 8 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+10 -> 20 [color = "#006391", label="'ExternalForcesBecomesExtreme' 'ObstacleStartsTravelSlower' 'ObstacleStartsTravelFaster' 'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld'", fontsize=12];
 
-27 -> 9 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+10 -> 2 [color = "#006391", label="'VehicleReachesCruiseSpeed' 'SetCruiseSpeed' 'ObstacleBecomesOld'", fontsize=12];
 
-11 -> 4 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+10 -> 9 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'SetCruiseSpeed' 'VehicleManageObstacle' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-11 -> 9 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+10 -> 1 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-27 -> 16 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+1 -> 16 [color = "#006391", label="'SetCruiseSpeed'", fontsize=12];
 
-10 -> 6 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+1 -> 19 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-29 -> 29 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorPredictVoltageChange' 'PredictorWait' 'Update' 'ControllerEvaluate' 'PredictorEvaluate'", fontsize=12];
+1 -> 10 [color = "#006391", label="'ObstacleStopsTravelFaster' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleFallsBelowMaxCruiseSpeed' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle'", fontsize=12];
 
-29 -> 28 [color = "#006391", label="'ControllerReadVoltage' 'PredictorPredictVoltageChange'", fontsize=12];
+19 -> 1 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-29 -> 26 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+5 -> 20 [color = "#006391", label="'ObstacleStartsTravelSlower'", fontsize=12];
 
-29 -> 35 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+15 -> 16 [color = "#006391", label="'VehicleReachesCruiseSpeed'", fontsize=12];
 
-29 -> 18 [color = "#006391", label="'ControllerAdjustTapPosition' 'ControllerReadVoltage'", fontsize=12];
+15 -> 17 [color = "#006391", label="'ObstacleBecomesOld'", fontsize=12];
 
-29 -> 23 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerReadVoltage' 'ControllerAdjustTapPosition'", fontsize=12];
+6 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-29 -> 22 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+6 -> 11 [color = "#006391", label="'ObstacleStopsTravelFaster' 'SetCruiseSpeed' 'ObstacleStopsTravelSlower' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-29 -> 6 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+7 -> 10 [color = "#006391", label="'SetCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-29 -> 30 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+7 -> 20 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'VehicleManageObstacle'", fontsize=12];
 
-28 -> 35 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+7 -> 3 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleManageObstacle' 'ObstacleBecomesOld' 'ObstacleStartsTravelSlower' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-3 -> 26 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+7 -> 14 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleStartsTravelSlower' 'ObstacleBecomesOld' 'VehicleFallsBelowMaxCruiseSpeed' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-3 -> 35 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+9 -> 16 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
 
-25 -> 35 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+7 -> 12 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
 
-16 -> 18 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+7 -> 19 [color = "#006391", label="'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower' 'VehicleFallsBelowMaxCruiseSpeed' 'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleManageObstacle'", fontsize=12];
 
-21 -> 31 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+8 -> 13 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-21 -> 15 [color = "#006391", label="'ControllerAdjustTapPosition' 'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 14 [color = "#006391", label="'ObstacleDistanceBecomesVeryClose' 'ObstacleStartsTravelSlower' 'ExternalForcesBecomesExtreme' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-23 -> 23 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate' 'PredictorPredictVoltageChange' 'PredictorWait' 'ControllerEvaluate'", fontsize=12];
+18 -> 14 [color = "#006391", label="'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesVeryClose' 'SetCruiseSpeed' 'ObstacleBecomesOld' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-23 -> 5 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 5 [color = "#006391", label="'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-23 -> 19 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 2 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'VehicleReachesCruiseSpeed' 'CruiseSpeedChangeFinished' 'ObstacleStopsTravelSlower' 'ExternalForcesBecomesNormal' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-23 -> 33 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 11 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleStopsTravelSlower' 'VehicleReachesCruiseSpeed' 'VehicleFallsBelowMaxCruiseSpeed' 'VehicleManageObstacle'", fontsize=12];
 
-32 -> 33 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+14 -> 12 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
 
-25 -> 23 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+10 -> 6 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
 
-19 -> 12 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+10 -> 14 [color = "#006391", label="'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesExtreme' 'ObstacleDistanceBecomesVeryClose' 'VehicleManageObstacle' 'ObstacleBecomesOld'", fontsize=12];
 
-32 -> 3 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+4 -> 16 [color = "#006391", label="'SetCruiseSpeed' 'ExternalForcesBecomesExtreme' 'ObstacleDistanceBecomesVeryClose'", fontsize=12];
 
-32 -> 34 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+4 -> 17 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-20 -> 30 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+4 -> 11 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-20 -> 14 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+17 -> 20 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-20 -> 31 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+1 -> 6 [color = "#006391", label="'SetCruiseSpeed' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ExternalForcesBecomesExtreme'", fontsize=12];
 
-8 -> 6 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+4 -> 10 [color = "#006391", label="'ObstacleStopsTravelFaster' 'ObstacleDistanceBecomesClose' 'ObstacleStopsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-5 -> 35 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+16 -> 12 [color = "#006391", label="'ExternalForcesBecomesNormal' 'VehicleLeavesCruiseSpeed' 'SetCruiseSpeed' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-5 -> 24 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+12 -> 19 [color = "#006391", label="'SetCruiseSpeed' 'ObstacleDistanceBecomesClose' 'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'VehicleReachesCruiseSpeed'", fontsize=12];
 
-35 -> 5 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+12 -> 14 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-24 -> 5 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+10 -> 12 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
 
-8 -> 22 [color = "#006391", label="'ControllerReadVoltage'", fontsize=12];
+10 -> 3 [color = "#006391", label="'ObstacleStartsTravelSlower' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesVeryClose' 'ObstacleBecomesOld' 'ObstacleStartsTravelFaster'", fontsize=12];
 
-30 -> 12 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+9 -> 12 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
 
-12 -> 5 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+14 -> 16 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'SetCruiseSpeed' 'VehicleReachesCruiseSpeed' 'VehicleManageObstacle' 'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-12 -> 30 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+8 -> 14 [color = "#006391", label="'ObstacleAppearsWhenCruiseActive'", fontsize=12];
 
-29 -> 7 [color = "#006391", label="'PredictorPredictVoltageChange' 'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 13 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished'", fontsize=12];
 
-29 -> 17 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+16 -> 4 [color = "#006391", label="'ObstacleDistanceBecomesClose' 'SetCruiseSpeed' 'ExternalForcesBecomesNormal' 'ObstacleDistanceBecomesBig'", fontsize=12];
 
-23 -> 29 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+12 -> 4 [color = "#006391", label="'ObstacleDistanceBecomesClose'", fontsize=12];
 
-23 -> 7 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+12 -> 11 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-23 -> 17 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+17 -> 9 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-29 -> 33 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+3 -> 12 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-7 -> 26 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+12 -> 3 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-7 -> 35 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+4 -> 2 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-18 -> 18 [color = "#006391", label="'ControllerReadVoltage' 'ControllerAdjustTapPosition' 'ControllerWait' 'PredictorEvaluate'", fontsize=12];
+16 -> 20 [color = "#006391", label="'VehicleLeavesCruiseSpeed' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-18 -> 33 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 1 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-18 -> 26 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+16 -> 10 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
-18 -> 35 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+6 -> 13 [color = "#006391", label="'ObstacleStopsTravelFaster' 'SetCruiseSpeed' 'ObstacleBecomesOld' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle'", fontsize=12];
 
-23 -> 22 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+13 -> 1 [color = "#006391", label="'ObstacleStartsTravelFaster' 'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-23 -> 6 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+10 -> 15 [color = "#006391", label="'ObstacleStartsTravelFaster' 'CruiseBecomesNotAllowed' 'CruiseOff'", fontsize=12];
 
-29 -> 5 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 6 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'VehicleExceedsMaxCruiseSpeed' 'CruiseSpeedChangeFinished' 'ObstacleStartsTravelFaster'", fontsize=12];
 
-29 -> 19 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+6 -> 20 [color = "#006391", label="'CCInitialisationFinished' 'VehicleManageObstacle' 'CruiseSpeedChangeFinished' 'ObstacleDistanceBecomesClose'", fontsize=12];
 
-29 -> 1 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+6 -> 18 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
 
-22 -> 20 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+20 -> 7 [color = "#006391", label="'CCInitialisationFinished' 'ExternalForcesBecomesNormal' 'ObstacleDistanceBecomesVeryClose' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle'", fontsize=12];
 
-22 -> 24 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 10 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'ExternalForcesBecomesNormal' 'ObstacleStopsTravelSlower' 'VehicleManageObstacle'", fontsize=12];
 
-22 -> 17 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 20 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle'", fontsize=12];
 
-6 -> 24 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+14 -> 13 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'ExternalForcesBecomesNormal'", fontsize=12];
 
-6 -> 17 [color = "#006391", label="'ControllerAdjustTapPosition'", fontsize=12];
+10 -> 19 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleManageObstacle' 'ObstacleStartsTravelFaster' 'ObstacleStartsTravelSlower'", fontsize=12];
 
-20 -> 33 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+14 -> 17 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
 
-4 -> 31 [color = "#006391", label="'PredictorPredictVoltageChange'", fontsize=12];
+14 -> 9 [color = "#006391", label="'CCInitialisationFinished' 'CruiseSpeedChangeFinished' 'VehicleExceedsMaxCruiseSpeed'", fontsize=12];
+
+2 -> 13 [color = "#006391", label="'VehicleExceedsMaxCruiseSpeed' 'CCInitialisationFinished'", fontsize=12];
+
+7 -> 16 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed'", fontsize=12];
+
+12 -> 10 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
+
+13 -> 2 [color = "#006391", label="'VehicleFallsBelowMaxCruiseSpeed' 'CCInitialisationFinished'", fontsize=12];
+
+11 -> 3 [color = "#006391", label="'ObstacleStartsTravelSlower'", fontsize=12];
+
+11 -> 4 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
+
+2 -> 1 [color = "#006391", label="'ObstacleStartsTravelFaster'", fontsize=12];
+
+16 -> 9 [color = "#006391", label="'ObstacleStopsTravelFaster'", fontsize=12];
 
 
 }

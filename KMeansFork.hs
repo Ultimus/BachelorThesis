@@ -14,24 +14,17 @@ import System.Random
 -- | Type holding an object of any type and its associated feature vector
 type Point a = (V.Vector Double, a)
 
-
-
-
 -- | Type representing a cluster (group) of vectors by its center and an id
 data Cluster = Cluster {
   cid :: !Int,
   center :: !(V.Vector Double)
   } -- deriving (Show,Eq)
 
-
-
-
 type Distance = V.Vector Double -> V.Vector Double -> Double
 
 {-#INLINE euclidD#-}
 euclidD :: Distance
 euclidD u v = V.sum $ V.zipWith (\a b -> (a - b)^2) u v
-
 
 {-#INLINE l1Dist#-}
 l1Dist :: Distance
@@ -42,7 +35,6 @@ l1Dist v1 v2 = V.sum $ V.zipWith diffabs v1 v2
 lInfDist :: Distance
 lInfDist v1 v2 = V.maximum $ V.zipWith diffabs v1 v2
     where diffabs a b = abs ( a - b)
-
 
 {-#INLINE iterativeSplit#-}
 iterativeSplit :: Int -> [a] -> [[a]]
@@ -83,10 +75,3 @@ kmeansAux points distance pgroups = let pss = kmeansStep points distance pgroups
 kmeans :: Int -> Distance -> (Int -> [Point a] -> [[Point a]]) -> [Point a] -> [[Point a]]
 kmeans k distance partition points = kmeansAux points distance pgroups
   where pgroups = partition k points
-
-
-bitDifference :: [[Int]]-> [[Int]] -> [Int]
-bitDifference u v = zipWith differenceBetweenBitVector u v
-
-differenceBetweenBitVector:: [Int] -> [Int] -> Int
-differenceBetweenBitVector xs ys = length $ filter id $ zipWith (/=) xs ys

@@ -27,9 +27,10 @@ tokens :-
   \' \$ fd \_ $alpha+ $digit+ \'        { \s -> FDInt s}
   \' \$ $alpha+ \_ $alpha+ \'           ;
   \.                                    { \s -> Sep '|' }
-  \' $alpha+ \'                         { \s -> S s }
+  \' $alpha+ \_* $alpha+ \'             { \s -> S s }
   pred \_ false                         { \s -> B False }
   pred \_ true                          { \s -> B True }
+  $atom+ \_ $alpha+                     { \s -> Atom s }
   $atom \_* $alpha*                     { \s -> Atom s } 
   \' \$ alpha+ \_ $alpha+ $digit+ \'    { \s -> S s } -- I just need the digit
   $digit+				{ \s -> Int (read s) }
