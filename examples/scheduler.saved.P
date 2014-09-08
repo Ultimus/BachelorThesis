@@ -1,0 +1,272 @@
+:- dynamic state_space_version_in_file/1.
+state_space_version_in_file(1).
+
+:- dynamic history/1.
+history([]).
+
+
+:- dynamic forward_history/1.
+forward_history(_42329) :- fail.
+
+
+:- dynamic op_trace_ids/1.
+op_trace_ids([]).
+
+
+:- dynamic current_state_id/1.
+current_state_id(root).
+
+
+:- dynamic current_options/1.
+current_options([(0,'INITIALISATION({},{},{})','$initialise_machine'([],[],[]),0)]).
+
+
+:- dynamic packed_visited_expression/2.
+packed_visited_expression(root,root).
+packed_visited_expression(0,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,[],[])))).
+packed_visited_expression(1,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(2,'PID'),[])))).
+packed_visited_expression(2,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(4,'PID'),[])))).
+packed_visited_expression(3,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(8,'PID'),[])))).
+packed_visited_expression(4,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(6,'PID'),[])))).
+packed_visited_expression(5,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(10,'PID'),[])))).
+packed_visited_expression(6,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,[],[])))).
+packed_visited_expression(7,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(12,'PID'),[])))).
+packed_visited_expression(8,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,[],[])))).
+packed_visited_expression(9,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,[],[])))).
+packed_visited_expression(10,'$bind_var'(active,[],'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(14,'PID'),[])))).
+packed_visited_expression(11,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(4,'PID'),[])))).
+packed_visited_expression(12,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(2,'PID'),[])))).
+packed_visited_expression(13,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(2,'PID'),[])))).
+packed_visited_expression(14,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(4,'PID'),[])))).
+packed_visited_expression(15,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(8,'PID'),[])))).
+packed_visited_expression(16,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(6,'PID'),[])))).
+packed_visited_expression(17,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,'$avl_bv'(4,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(18,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,'$avl_bv'(4,'PID'),'$bind_var'(waiting,'$avl_bv'(2,'PID'),[])))).
+packed_visited_expression(19,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(8,'PID'),[])))).
+packed_visited_expression(20,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(10,'PID'),[])))).
+packed_visited_expression(21,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,'$avl_bv'(8,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(22,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,[],'$bind_var'(waiting,'$avl_bv'(12,'PID'),[])))).
+packed_visited_expression(23,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,'$avl_bv'(8,'PID'),'$bind_var'(waiting,'$avl_bv'(2,'PID'),[])))).
+packed_visited_expression(24,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,'$avl_bv'(4,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(25,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,'$avl_bv'(2,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(26,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,'$avl_bv'(2,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(27,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,'$avl_bv'(8,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(28,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,'$avl_bv'(2,'PID'),'$bind_var'(waiting,'$avl_bv'(8,'PID'),[])))).
+packed_visited_expression(29,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,'$avl_bv'(2,'PID'),'$bind_var'(waiting,'$avl_bv'(4,'PID'),[])))).
+packed_visited_expression(30,'$bind_var'(active,'$avl_bv'(8,'PID'),'$bind_var'(ready,'$avl_bv'(6,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(31,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,'$avl_bv'(4,'PID'),'$bind_var'(waiting,'$avl_bv'(8,'PID'),[])))).
+packed_visited_expression(32,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,'$avl_bv'(8,'PID'),'$bind_var'(waiting,'$avl_bv'(4,'PID'),[])))).
+packed_visited_expression(33,'$bind_var'(active,'$avl_bv'(4,'PID'),'$bind_var'(ready,'$avl_bv'(10,'PID'),'$bind_var'(waiting,[],[])))).
+packed_visited_expression(34,'$bind_var'(active,'$avl_bv'(2,'PID'),'$bind_var'(ready,'$avl_bv'(12,'PID'),'$bind_var'(waiting,[],[])))).
+
+
+:- dynamic not_invariant_checked/1.
+not_invariant_checked(0).
+not_invariant_checked(1).
+not_invariant_checked(2).
+not_invariant_checked(3).
+not_invariant_checked(4).
+not_invariant_checked(9).
+not_invariant_checked(5).
+not_invariant_checked(14).
+not_invariant_checked(6).
+not_invariant_checked(17).
+not_invariant_checked(19).
+not_invariant_checked(7).
+not_invariant_checked(8).
+not_invariant_checked(10).
+not_invariant_checked(21).
+not_invariant_checked(11).
+not_invariant_checked(12).
+not_invariant_checked(13).
+not_invariant_checked(15).
+not_invariant_checked(25).
+not_invariant_checked(16).
+not_invariant_checked(18).
+not_invariant_checked(20).
+not_invariant_checked(22).
+not_invariant_checked(30).
+not_invariant_checked(23).
+not_invariant_checked(28).
+not_invariant_checked(24).
+not_invariant_checked(26).
+not_invariant_checked(27).
+not_invariant_checked(29).
+not_invariant_checked(31).
+not_invariant_checked(32).
+not_invariant_checked(33).
+not_invariant_checked(34).
+
+
+:- dynamic not_interesting/1.
+not_interesting(_42534) :- fail.
+
+
+:- dynamic max_reached_for_node/1.
+max_reached_for_node(_42661) :- fail.
+
+
+:- dynamic time_out_for_node/3.
+time_out_for_node(_42788,_42789,_42790) :- fail.
+
+
+:- dynamic use_no_timeout/1.
+use_no_timeout(_42921) :- fail.
+
+
+:- dynamic transition/4.
+transition(root,'$initialise_machine'([],[],[]),0,0).
+transition(0,new(fd(1,'PID')),1,1).
+transition(0,new(fd(2,'PID')),2,2).
+transition(0,new(fd(3,'PID')),3,3).
+transition(1,new(fd(2,'PID')),4,4).
+transition(1,new(fd(3,'PID')),5,5).
+transition(1,del(fd(1,'PID')),6,0).
+transition(1,ready(fd(1,'PID')),7,6).
+transition(2,new(fd(1,'PID')),8,4).
+transition(2,new(fd(3,'PID')),9,7).
+transition(2,del(fd(2,'PID')),10,0).
+transition(2,ready(fd(2,'PID')),11,8).
+transition(3,new(fd(1,'PID')),12,5).
+transition(3,new(fd(2,'PID')),13,7).
+transition(3,del(fd(3,'PID')),14,0).
+transition(3,ready(fd(3,'PID')),15,9).
+transition(4,new(fd(3,'PID')),16,10).
+transition(4,del(fd(1,'PID')),17,2).
+transition(4,del(fd(2,'PID')),18,1).
+transition(4,ready(fd(1,'PID')),19,11).
+transition(4,ready(fd(2,'PID')),20,12).
+transition(9,new(fd(1,'PID')),21,13).
+transition(9,new(fd(2,'PID')),22,14).
+transition(9,swap,23,3).
+transition(5,new(fd(2,'PID')),24,10).
+transition(5,del(fd(1,'PID')),25,3).
+transition(5,del(fd(3,'PID')),26,1).
+transition(5,ready(fd(1,'PID')),27,15).
+transition(5,ready(fd(3,'PID')),28,13).
+transition(14,new(fd(1,'PID')),29,16).
+transition(14,del(fd(2,'PID')),30,9).
+transition(14,ready(fd(2,'PID')),31,17).
+transition(14,swap,32,7).
+transition(6,new(fd(2,'PID')),33,11).
+transition(6,new(fd(3,'PID')),34,15).
+transition(6,swap,35,1).
+transition(17,new(fd(1,'PID')),36,18).
+transition(17,swap,37,19).
+transition(19,new(fd(1,'PID')),38,20).
+transition(19,del(fd(3,'PID')),39,8).
+transition(19,ready(fd(3,'PID')),40,21).
+transition(19,swap,41,7).
+transition(7,new(fd(1,'PID')),42,10).
+transition(7,del(fd(2,'PID')),43,3).
+transition(7,del(fd(3,'PID')),44,2).
+transition(7,ready(fd(2,'PID')),45,19).
+transition(7,ready(fd(3,'PID')),46,14).
+transition(8,new(fd(1,'PID')),47,12).
+transition(8,new(fd(3,'PID')),48,19).
+transition(8,swap,49,2).
+transition(10,del(fd(1,'PID')),50,7).
+transition(10,del(fd(2,'PID')),51,5).
+transition(10,del(fd(3,'PID')),52,4).
+transition(10,ready(fd(1,'PID')),53,22).
+transition(10,ready(fd(2,'PID')),54,20).
+transition(10,ready(fd(3,'PID')),55,16).
+transition(21,new(fd(1,'PID')),56,23).
+transition(21,swap,57,14).
+transition(11,new(fd(3,'PID')),58,22).
+transition(11,del(fd(2,'PID')),59,6).
+transition(11,ready(fd(2,'PID')),60,24).
+transition(11,swap,61,4).
+transition(12,new(fd(3,'PID')),62,20).
+transition(12,del(fd(1,'PID')),63,8).
+transition(12,ready(fd(1,'PID')),64,25).
+transition(12,swap,65,4).
+transition(13,new(fd(2,'PID')),66,16).
+transition(13,del(fd(1,'PID')),67,9).
+transition(13,ready(fd(1,'PID')),68,26).
+transition(13,swap,69,5).
+transition(15,new(fd(2,'PID')),70,22).
+transition(15,del(fd(3,'PID')),71,6).
+transition(15,ready(fd(3,'PID')),72,27).
+transition(15,swap,73,5).
+transition(25,new(fd(3,'PID')),74,28).
+transition(25,swap,75,11).
+transition(16,del(fd(1,'PID')),76,14).
+transition(16,del(fd(2,'PID')),77,13).
+transition(16,ready(fd(1,'PID')),78,29).
+transition(16,ready(fd(2,'PID')),79,18).
+transition(16,swap,80,10).
+transition(18,del(fd(1,'PID')),81,17).
+transition(18,ready(fd(1,'PID')),82,30).
+transition(18,swap,83,20).
+transition(20,del(fd(1,'PID')),84,19).
+transition(20,del(fd(3,'PID')),85,12).
+transition(20,ready(fd(1,'PID')),86,28).
+transition(20,ready(fd(3,'PID')),87,23).
+transition(20,swap,88,10).
+transition(22,del(fd(2,'PID')),89,15).
+transition(22,del(fd(3,'PID')),90,11).
+transition(22,ready(fd(2,'PID')),91,31).
+transition(22,ready(fd(3,'PID')),92,32).
+transition(22,swap,93,10).
+transition(30,swap,94,31).
+transition(30,swap,95,28).
+transition(23,del(fd(1,'PID')),96,21).
+transition(23,ready(fd(1,'PID')),97,33).
+transition(23,swap,98,16).
+transition(28,del(fd(3,'PID')),99,25).
+transition(28,ready(fd(3,'PID')),100,33).
+transition(28,swap,101,22).
+transition(24,new(fd(3,'PID')),102,31).
+transition(24,swap,103,12).
+transition(26,new(fd(2,'PID')),104,29).
+transition(26,swap,105,15).
+transition(27,new(fd(2,'PID')),106,32).
+transition(27,swap,107,13).
+transition(29,del(fd(2,'PID')),108,26).
+transition(29,ready(fd(2,'PID')),109,30).
+transition(29,swap,110,22).
+transition(31,del(fd(3,'PID')),111,24).
+transition(31,ready(fd(3,'PID')),112,34).
+transition(31,swap,113,20).
+transition(32,del(fd(2,'PID')),114,27).
+transition(32,ready(fd(2,'PID')),115,34).
+transition(32,swap,116,16).
+transition(33,swap,117,32).
+transition(33,swap,118,29).
+transition(34,swap,119,23).
+transition(34,swap,120,18).
+
+
+:- dynamic transition_info/2.
+transition_info(_43073,_43074) :- fail.
+
+
+:- dynamic operation_not_yet_covered/1.
+operation_not_yet_covered(_43203) :- fail.
+
+
+:- dynamic state_error/3.
+state_error(_43330,_43331,_43332) :- fail.
+
+
+:- dynamic not_all_z_saved/1.
+not_all_z_saved(_43463) :- fail.
+
+
+:- dynamic not_all_transitions_added_saved/1.
+not_all_transitions_added_saved(_43590) :- fail.
+
+
+:- dynamic stored_value/2.
+stored_value(_43717,_43718) :- fail.
+
+
+:- dynamic stored_value_hash_to_id/2.
+stored_value_hash_to_id(_43847,_43848) :- fail.
+
+
+:- dynamic next_value_id/1.
+next_value_id(0).
+
+saved_gennum_count(35).

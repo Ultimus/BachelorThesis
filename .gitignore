@@ -9,9 +9,9 @@ cabal-dev
 .cabal-sandbox/
 cabal.sandbox.config
 cabal.config
-*.saved.P
 *~
 *.txt
 *.pl
 *.png
-
+Main
+Graph
