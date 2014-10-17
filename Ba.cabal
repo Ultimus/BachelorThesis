@@ -15,7 +15,8 @@ build-type:          Simple
 cabal-version:       >=1.8
 
 executable Ba
-  main-is: Main.hs           
-  other-modules: KMeansFork, PrologLexer, Token, Graph     
-  build-depends:       base ==4.6.*, vector ==0.10.*, random ==1.0.*, array >=0.4, parsec ==3.1.*, fgl ==5.5.*, MissingH ==1.2.*, random-shuffle ==0.0.*, containers ==0.5.*
-  build-tools:         alex, happy
+  -- main-is: Main.hs             
+  -- other-modules: KMeansFork, PrologLexer, Token, Graph, Variables
+  build-depends:       base ==4.6.*, vector ==0.10.*, random ==1.0.*, array >=0.4.*, parsec ==3.1.*, MissingH ==1.2.*, fgl ==5.5.*, hashmap ==1.3.*, containers ==0.5.*, random-shuffle ==0.0.*
+  build-tools:         alex
+
